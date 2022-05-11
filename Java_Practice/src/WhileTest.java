@@ -18,7 +18,8 @@ public class WhileTest {
 		//lw.wl2();
 		//lw.wl3();
 		//lw.wl4();
-		lw.wl5();
+		//lw.wl5();
+		lw.insertScore();
 	}
 
 }
@@ -83,4 +84,30 @@ class LoopWhile{
 		System.out.println("발생한 랜덤 숫자: "+str);
 		System.out.println("발생한 랜덤 숫자들의 합: "+sum);
 	}
+	//whileTest7 (2022.05.11)
+		public void insertScore(){
+			Scanner sc=new Scanner(System.in);
+			int count=0;
+			int num=0;
+			String str1=""; //올바르게 입력한 값
+			String str2=""; //입력한 모든 값
+			String str3=""; //올바르지 않은 값
+			while(true){
+				System.out.println("점수를 입력하세요(1~100점사이): ");
+				num=sc.nextInt();
+				str2+=num+" ";
+				if(num>100 || num<1){
+					str3+=num+" ";
+					System.out.println("정확한 점수가 아닙니다.");
+				}
+				else{
+					str1+=num+" ";
+					count++;
+					if (count==5) break;
+				}
+			}
+			System.out.println("입력한 모든 점수: "+str2);
+			System.out.println("올바르게 입력한 5개의 점수: "+str1);
+			System.out.println("올바르지 않은 입력점수: "+str3);
+		}
 }
