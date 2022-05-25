@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+<<<<<<< HEAD
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="PrivatePractice"/>
 	<classpathentry kind="src" path="loop"/>
 	<classpathentry kind="src" path="CodingTest"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="ToyCode"/>
+	<classpathentry kind="src" path="CodingTest"/>
+>>>>>>> refs/remotes/origin/master
 	<classpathentry kind="output" path="bin"/>
 </classpath>

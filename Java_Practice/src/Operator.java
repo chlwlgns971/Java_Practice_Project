@@ -1,4 +1,5 @@
 //Operator01
+<<<<<<< HEAD
 /*1. ì—°ì‚°ìì˜ ì¢…ë¥˜
  * 	-ì‚°ìˆ , ê´€ê³„, ë…¼ë¦¬, ëŒ€ì…, ì¦ê°, ì¡°ê±´
  * 	-ë‹¨í•­, ì´í•­, ì‚¼í•­
@@ -104,6 +105,113 @@ class BinaryOperator{//ì´í•­ì—°ì‚°ì
 	}
 }
 class RelationalOperator{//ê´€ê³„ì—°ì‚°ì
+=======
+/*1. ¿¬»êÀÚÀÇ Á¾·ù
+ * 	-»ê¼ú, °ü°è, ³í¸®, ´ëÀÔ, Áõ°¨, Á¶°Ç
+ * 	-´ÜÇ×, ÀÌÇ×, »ïÇ×
+ * 	-³í¸® ¿¬»êÀÚ(!->&&->||¼øÀ¸·Î ¿¬»ê)
+ */
+public class Operator {
+	public static void main(String[] args) {
+		int a=5;
+		int b=5;
+		int c=7;
+		
+		//´ÜÇ× ¿¬»êÀÚ
+		UnaryOperator up=new UnaryOperator();
+		System.out.println("a++ is "+up.postfixIncrement(a));
+		System.out.println("++a is "+up.prefixIncrement(a));
+		System.out.println("a-- is "+up.postfixDecrement(a));
+		System.out.println("--a is "+up.prefixDecrement(a));
+		
+		//ÀÌÇ× ¿¬»êÀÚ
+		BinaryOperator bo=new BinaryOperator();
+		System.out.println("a+b="+bo.add(a, b)); 
+		System.out.println("a-b="+bo.minus(a, b)); 
+		System.out.println("a*b="+bo.multiply(a, b));
+		System.out.println("c/a="+bo.divide(c, a)); 
+		System.out.println("c%a="+bo.remain(c, a)); 
+		System.out.println("2022%7="+bo.remain(2022, 7));
+		
+		//°ü°è ¿¬»êÀÚ
+		RelationalOperator ro=new RelationalOperator();
+		System.out.println("boolean a>b="+ro.compare(a, b));
+		System.out.println("boolean ('co'=='Co')="+ro.compare("co", "Co"));
+		System.out.println("boolean ('co'=='co')="+ro.compare("co", "co"));
+		System.out.println("boolean (new String('co')==new String('co'))="
+				+ro.compare(new String("co"), new String("co")));//°´Ã¼¸¦ »õ·Î »ı¼ºÇß±â ¶§¹®¿¡ ¼­·Î ´Ù¸¥ ÁÖ¼ÒÀÇ StringÀÌ¶ó¼­ false
+		System.out.println("boolean equals(new String('co')==new String('co'))="
+				+(ro.compareEquals(new String("co"), new String("co")))); //equals¸¦ »ç¿ëÇÏ¸é ÁÖ¼Ò°¡ ´Ù¸£´õ¶óµµ °ª ÀÚÃ¼¸¦ ºñ±³ÇÏ±â ¶§¹®¿¡ trueÃâ·Â
+		System.out.println("boolean ('c'=='c')="+ro.compare('c', 'c'));// ¾Æ½ºÅ°ÄÚµå·Î a>bºñ±³ ¸Ş¼Òµå¿¡ µé¾î°¡±â¶§¹®¿¡ false
+		
+		//³í¸®¿¬»êÀÚ
+		LogicalOperator lo=new LogicalOperator();
+		System.out.println("True && True is "+lo.and(true, true));
+		System.out.println("False && True is "+lo.and(false, true));
+		System.out.println("True || True is "+lo.or(true, true));
+		System.out.println("False || True is "+lo.or(false, true));
+		System.out.println("True 'NOT' is "+lo.not(true));
+		System.out.println("False 'NOT' is "+lo.not(false));
+		//³í¸®¿¬»êÀÚ Å×½ºÆ®(À±³âÆÇº°)
+		int year=1997;
+		if(lo.or(lo.and(year%4==0, year%100 !=0),year%400==0)){
+			System.out.println(year+"³âÀº À±³âÀÔ´Ï´Ù.");
+		}
+		else System.out.println(year+"³âÀº Æò³âÀÔ´Ï´Ù.");
+		
+		//»ïÇ× ¿¬»êÀÚ
+		System.out.println(a>b ? true:false); //a°¡ bº¸´Ù Å«°Ô ÂüÀÌ¸é trueÃâ·Â, ¾Æ´Ï¶ó¸é falseÃâ·Â
+		System.out.println(a==b ? true:false); //a¿Í b°¡ °°´Ù¸é true Ãâ·Â, ¾Æ´Ï¶ó¸é falseÃâ·Â
+		
+	}
+}
+class UnaryOperator{//´ÜÇ×¿¬»êÀÚ=Áõ°¨¿¬»êÀÚ
+	public int prefixIncrement(int a){
+		int res=++a;
+		return res;
+	}
+	public int postfixIncrement(int a){
+		int res=a++;
+		return res;
+	}
+	public int prefixDecrement(int a){
+		int res=--a;
+		return res;
+	}
+	public int postfixDecrement(int a){
+		int res=a--;
+		return res;
+	}
+	
+}
+class BinaryOperator{//ÀÌÇ×¿¬»êÀÚ
+	public int add(int a, int b){ //´õÇÏ±â
+		int res=a+b;
+		return res;
+	}
+	public double add(double a, int b){ //¿À¹ö·Îµù(À§¿¡ °°Àº ÀÌ¸§ÀÇ add¸Ş¼Òµå°¡ Á¸ÀçÇÏÁö¸¸ Å¸ÀÔÀÌ ´Ù¸£±â ¶§¹®¿¡ »ç¿ë°¡´É)
+		double res=a+b;
+		return res;
+	}
+	public int minus(int a, int b){ //»©±â
+		int res=a-b;
+		return res;
+	}
+	public int divide(int a, int b){ //³ª´°¼À ‘–
+		int res=a/b;
+		return res;
+	}
+	public int remain(int a, int b){ //³ª´°¼À ³ª¸ÓÁö
+		int res=a%b;
+		return res;
+	}
+	public int multiply(int a, int b){ // °ö¼À
+		int res=a*b;
+		return res;
+	}
+}
+class RelationalOperator{//°ü°è¿¬»êÀÚ
+>>>>>>> refs/remotes/origin/master
 	public boolean compare(int a,int b){
 		boolean res=a>b;
 		return res;

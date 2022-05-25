@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //프로그래머스 정렬 level1 K번째 수
 /*배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.
 
@@ -13,6 +14,8 @@ array의 길이는 1 이상 100 이하입니다.
 array의 각 원소는 1 이상 100 이하입니다.
 commands의 길이는 1 이상 50 이하입니다.
 commands의 각 원소는 길이가 3입니다.*/
+=======
+>>>>>>> refs/remotes/origin/master
 import java.util.*;
 public class SolutionSort1 {
 

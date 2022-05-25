@@ -16,4 +16,8 @@ public class LoginTest {
 		}
 		else System.out.println("아이디가 잘못입력되었습니다.");
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> refs/remotes/origin/master
