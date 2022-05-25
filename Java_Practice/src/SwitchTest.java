@@ -4,30 +4,30 @@ public class SwitchTest {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		System.out.println("¼ºÀûÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+		System.out.println("ì„±ì ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 		int score=sc.nextInt();
 		String res="";
 		
 		switch (score/10) {
 		case 10:
 		case 9:
-			res="¼ö";
+			res="ìˆ˜";
 			break;
 		case 8:
-			res="¿ì";
+			res="ìš°";
 			break;
 		case 7:
-			res="¹Ì";
+			res="ë¯¸";
 			break;
 		case 6:
-			res="¾ç";
+			res="ì–‘";
 			break;
 
 		default:
-			res="°¡";
+			res="ê°€";
 			break;
 		}
-		String str="ÀÔ·Â¹ŞÀº Á¡¼ö: "+score+"\n¼ºÀû: "+res;
+		String str="ì…ë ¥ë°›ì€ ì ìˆ˜: "+score+"\nì„±ì : "+res;
 		System.out.println(str);
 
 	}

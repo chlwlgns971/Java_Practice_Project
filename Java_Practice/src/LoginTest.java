@@ -1,23 +1,18 @@
-import java.util.Scanner;
-
+import java.util.*;
 public class LoginTest {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		System.out.println("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+		System.out.println("ì•„ì´ë””ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 		String id=sc.nextLine();
-		System.out.println("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+		System.out.println("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 		String pw=sc.nextLine();
-		int intPW=Integer.parseInt(pw); //Á¤¼ö·Î ºñ±³ÇÏ±â À§ÇÑ paseInt»ç¿ë
+		int intPW=Integer.parseInt(pw); //ì •ìˆ˜ë¡œ ë¹„êµí•˜ê¸° ìœ„í•œ paseIntì‚¬ìš©
 		
 		if (id.equals("cjh97")){
-			if (intPW==1234) System.out.println("·Î±×ÀÎ¿¡ ¼º°øÇÏ¿´½À´Ï´Ù.");
-			else System.out.println("ºñ¹Ğ¹øÈ£°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+			if (intPW==1234) System.out.println("ë¡œê·¸ì¸ì— ì„±ê³µí•˜ì˜€ìŠµë‹ˆë‹¤.");
+			else System.out.println("ë¹„ë°€ë²ˆí˜¸ê°€ ì˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
-		else System.out.println("¾ÆÀÌµğ°¡ Àß¸øÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+		else System.out.println("ì•„ì´ë””ê°€ ì˜ëª»ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> refs/remotes/origin/master

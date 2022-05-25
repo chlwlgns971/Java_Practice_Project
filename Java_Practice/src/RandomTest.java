@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 public class RandomTest {
 
 	public static void main(String[] args) {
@@ -9,7 +7,7 @@ public class RandomTest {
 	}
 	public void randProc(){
 		/*
-		 50~100:ÃÖ´ë-ÃÖ¼Ò+1
+		 50~100:ìµœëŒ€-ìµœì†Œ+1
 		 int a=(int)(Math.random()*51+50) 
 		 
 		 100~150
@@ -17,74 +15,29 @@ public class RandomTest {
 		 */
 		
 		
-		//ÁÖ»çÀ§ ´øÁö±â-·£´ý¹ß»ý 1~6
+		//ì£¼ì‚¬ìœ„ ë˜ì§€ê¸°-ëžœë¤ë°œìƒ 1~6
 		int rand=(int)(Math.random()*6+1); 
 		
 		switch (rand) {
 		case 1:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 1°³¸¦ ¹Þ½À´Ï´Ù.");
+			System.out.println(rand+" ë‚˜ì™”ìŠµë‹ˆë‹¤."+"\nì‚¬íƒ• 1ê°œë¥¼ ë°›ìŠµë‹ˆë‹¤.");
 			break;
 		case 2:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 2°³¸¦ ¹Þ½À´Ï´Ù.");
+			System.out.println(rand+" ë‚˜ì™”ìŠµë‹ˆë‹¤."+"\nì‚¬íƒ• 2ê°œë¥¼ ë°›ìŠµë‹ˆë‹¤.");
 			break;
 		case 3:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 3°³¸¦ ¹Þ½À´Ï´Ù.");
+			System.out.println(rand+" ë‚˜ì™”ìŠµë‹ˆë‹¤."+"\nì‚¬íƒ• 3ê°œë¥¼ ë°›ìŠµë‹ˆë‹¤.");
 			break;
 		case 4:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 4°³¸¦ ¹Þ½À´Ï´Ù.");
+			System.out.println(rand+" ë‚˜ì™”ìŠµë‹ˆë‹¤."+"\nì‚¬íƒ• 4ê°œë¥¼ ë°›ìŠµë‹ˆë‹¤.");
 			break;
 		case 5:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 5°³¸¦ ¹Þ½À´Ï´Ù.");
+			System.out.println(rand+" ë‚˜ì™”ìŠµë‹ˆë‹¤."+"\nì‚¬íƒ• 5ê°œë¥¼ ë°›ìŠµë‹ˆë‹¤.");
 			break;
 		case 6:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 6°³¸¦ ¹Þ½À´Ï´Ù.");
+			System.out.println(rand+" ë‚˜ì™”ìŠµë‹ˆë‹¤."+"\nì‚¬íƒ• 6ê°œë¥¼ ë°›ìŠµë‹ˆë‹¤.");
 			break;
 		}
 	}
 
 }
-=======
-public class RandomTest {
-
-	public static void main(String[] args) {
-		RandomTest test=new RandomTest();
-		test.randProc();
-
-	}
-	public void randProc(){
-		/*
-		 50~100:ÃÖ´ë-ÃÖ¼Ò+1
-		 int a=(int)(Math.random()*51+50) 
-		 
-		 100~150
-		 int a=(int)(Math.random()*51+100) 
-		 */
-		
-		
-		//ÁÖ»çÀ§ ´øÁö±â-·£´ý¹ß»ý 1~6
-		int rand=(int)(Math.random()*6+1); 
-		
-		switch (rand) {
-		case 1:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 1°³¸¦ ¹Þ½À´Ï´Ù.");
-			break;
-		case 2:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 2°³¸¦ ¹Þ½À´Ï´Ù.");
-			break;
-		case 3:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 3°³¸¦ ¹Þ½À´Ï´Ù.");
-			break;
-		case 4:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 4°³¸¦ ¹Þ½À´Ï´Ù.");
-			break;
-		case 5:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 5°³¸¦ ¹Þ½À´Ï´Ù.");
-			break;
-		case 6:
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù."+"\n»çÅÁ 6°³¸¦ ¹Þ½À´Ï´Ù.");
-			break;
-		}
-	}
-
-}
->>>>>>> refs/remotes/origin/master

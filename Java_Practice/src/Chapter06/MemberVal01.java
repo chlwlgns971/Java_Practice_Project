@@ -1,6 +1,6 @@
 package Chapter06;
-<<<<<<< HEAD
 import java.util.*;
+
 /*
  * Field
  * -ë©¤ë²„ë³€ìˆ˜ë¥¼ ì˜ë¯¸
@@ -83,89 +83,4 @@ public class MemberVal01 {
 	}
 
 }
-=======
 
-import java.util.*;
-/*
- * Field
- * -¸â¹öº¯¼ö¸¦ ÀÇ¹Ì
- * -Å¬·¡½º ³»ºÎ(¸Ş¼­µå ¾ÈÀÌ ¾Æ´Ô)
- * -ÀÚµ¿ ÃÊ±âÈ­->»ç¿ëÀÚ°¡ ÃÊ±âÈ­ÇÏÁö ¾Ê¾Æµµ ÃÊ±âÈ­°¡ ÀÏ¾î³­´Ù.(Á¤¼ö´Â 0, ½Ç¼ö´Â 0.0, ¹®ÀÚ´Â " ", booleanÀº false, ¹è¿­ÀÌ³ª Å¬·¡½º, ÀÎÅÍÆäÀÌ½º´Â null)
- * -¿ªÇÒ: Å¬·¡½ºÀÇ »ıÅÂ¸¦ Ç¥Çö
- * 
- * ¸â¹öº¯¼öÀÇ ÂüÁ¶
- * -Å¬·¡½º ³»ºÎ->°´Ã¼ »ı¼º¾øÀÌ ÂüÁ¶ÇÒ ¼ö ÀÖ´Ù.
- * -Å¬·¡½º ¿ÜºÎ->°´Ã¼¸¦ »ı¼ºÇÏ°í »ı¼ºµÈ °´Ã¼ÂüÁ¶ º¯¼ö¸¦ ÀÌ¿ëÇÏ¿© ÂüÁ¶
- * 
- * ¿À¹ö·Îµù
- * -°°Àº Å¬·¡½º ³»¿¡¼­ °°Àº ÀÌ¸§ÀÇ ¸Ş¼Òµå¸¦ »ç¿ëÇÏ´Â °ÍÀ» ¿À¹ö·ÎµùÀÌ¶ó°í ÇÑ´Ù.
- * -±â´ÉÀÇ ´ÙÇü¼ºÀ» º¸ÀåÇÏ±â À§ÇØ »ç¿ë
- * 
- * ¿À¹ö¶óÀÌµù
- * -»ó¼Ó°ü°è°¡ ¼±ÇàµÇ¾ßÇÏ¸ç, ºÎ¸ğÅ¬·¡½º¿¡¼­ Á¤ÀÇµÈ ¸Ş¼­µå°¡ ÀÚ½ÄÅ¬·¡½º¿¡¼­ ÀçÁ¤ÀÇÇÏ¸é¼­ ´Ù¸¥ ÀÏÀ» ÇÒ ¼ö ÀÖ°Ô ¸¸µå´Â °ÍÀ» ¿À¹ö¶óÀÌµùÀÌ¶ó°í ÇÑ´Ù.
- * 
- * »ı¼ºÀÚ ¸Ş¼­µå(new)
- * -Å¬·¡½º¸¦ È£ÃâÇÒ ¶§ ÃÊ±âÈ­ÇÏ´Â ¸ñÀûÀ¸·Î »ç¿ë
- * 
- * ¸Ş¼­µå
- * -Å¬·¡½º°¡ ¼öÇàÇØ¾ß ÇÒ ºñÁö´Ï½º ·ÎÁ÷À» ÄÚµåÈ­ÇÑ ¸ğµâ
- * -¹İÈ¯ Å¸ÀÔÀÌ ÀÖ´Â ¸Ş¼­µå, ¹İÈ¯Å¸ÀÔÀÌ ¾ø´Â ¸Ş¼­µå·Î ³ª´¶´Ù.
- */
-
-
-/*
- * ¹®Á¦1 ´ÙÀ½Á¶°ÇÀ» ¸¸Á·ÇÏ´Â ¿ø(Circle)Å¬·¡½º¸¦ ±¸¼ºÇÏ½Ã¿À. ¸â¹öº¯¼ö´Â ½Ç¼öÅ¸ÀÔÀÇ ¹İÁö¸§(radius)¿Í ½Ç¼öÇü »ó¼öÀÎ ¿øÁÖÀ²(PI=3.1415926)
- * 	1)±âº» »ı¼ºÀÚ ¹× ¹İÁö¸§À» Á¤ÀÇÇÏ´Â »ı¼ºÀÚ
- * 	2)ÇöÀçÀÇ ¹İÁö¸§À¸·Î ¸éÀûÀ» ±¸ÇÏ¿© ¹İÈ¯ÇÏ´Â ÇÔ¼ö(getArea)
- * ¹®Á¦2 ¿øÅëÅ¬·¡½º(Cylinder)¸¦ ±¸¼ºÇÏ½Ã¿À
- * 	1)¸â¹ö: ³ôÀÌ(½Ç¼öÇü), ¹®Á¦1¿¡¼­ ±¸¼ºÇÑ CircleÅ¸ÀÔÀÇ ¿ø
- * 	2)¸Ş¼­µå: ºÎÇÇ¸¦ ¹İÈ¯ÇÏ´Â ½Ç¼öÇü ¸Ş¼­µå getVolumn()
- */
-public class MemberVal01 {
-
-	public static void main(String[] args) {
-//		MemberEx01 m1=new MemberEx01();
-//		m1.setAge(26, "ÃÖÁöÈÆ", true);
-//		System.out.println(m1.toString());
-		double r=23.35;
-		double height=8.0;
-		Circle circle=new Circle(r);
-		System.out.println("¹İÁö¸§ÀÌ "+r+"ÀÎ ¿øÀÇ ³ĞÀÌ= "+circle.getArea());
-		Cylinder y1=new Cylinder();
-		System.out.println("¹İÁö¸§ÀÌ 23.35ÀÌ°í, ³ôÀÌ°¡ 10ÀÎ ¿øÀÇ ºÎÇÇ= "+y1.getVolumn());
-		Cylinder y2=new Cylinder(height,new Circle(r));
-		System.out.println("¹İÁö¸§ÀÌ "+r+"ÀÌ°í, ³ôÀÌ°¡ "+height+"ÀÎ ¿øÀÇ ºÎÇÇ= "+y2.getVolumn());
-		
-//		Cylinder cl=new Cylinder();
-//		cl.setCylinder(height,r);
-//		System.out.println("¹İÁö¸§ÀÌ "+r+"ÀÌ°í, ³ôÀÌ°¡ "+height+"ÀÎ ¿øÀÇ ºÎÇÇ= "+cl.getVolumn());
-		
-//		¹®Á¦3 ´ÙÀ½ Á¶°ÇÀ» ¸¸Á·ÇÏ´Â Å¬·¡½º¸¦ »ı¼ºÇÏ½Ã¿À(»ç¿øÅ¬·¡½º(Employee))
-//		 	1)¸â¹öº¯¼ö: ¿ù±Ş¿©(salary): Á¤¼öÇü, »ç¿ø¹øÈ£(emp_id): ¹®ÀÚ¿­, »ç¿ø¸í(emp_name): ¹®ÀÚ¿­
-//		 	2)¸Ş¼­µå: »ı¼ºÀÚ(»ç¿ø¹øÈ£, »ç¿ø¸íÀ» ÀÔ·Â), ±âº»»ı¼ºÀÚ, ¿¬ºÀÀ» °è»êÇØ¼­ ¹İÈ¯ÇÏ´Â ¸Ş¼­µå
-//		 ¹®Á¦4 À§ÀÇ »ç¿ø ¿©·¯¸íÀ» Ã³¸®ÇÏ±â À§ÇÑ ¹æ¹ı
-//		 
-//		 À§ ¹®Á¦¸¦ ÄÚµùÇÏ¿© ¸Ş·ÎÀå¿¡ º¹»çÇÑ ÈÄ sem-pcÀÇ D:\A_TeachingMaterial\1.BasicJava\Homework¿¡ Àü¼ÛÇÒ °Í.
-		Employee ep=new Employee();
-		System.out.println("ÃÖÁöÈÆ »ç¿øÀÇ º¸³Ê½º¸¦ Æ÷ÇÔÇÑ ¿¬ºÀÀº "+ep.getYearSalary()+"ÀÔ´Ï´Ù.");
-		int salary=300;
-		String emp_id="20220523";
-		String emp_name="¼ÕÈï¹Î";
-		Employee ep1=new Employee(salary,emp_id,emp_name);
-		System.out.println(emp_name+"»ç¿øÀÇ »ç¿ø¹øÈ£´Â "+emp_id+"ÀÌ°í, º¸³Ê½º¸¦ Æ÷ÇÔÇÑ ¿¬ºÀÀº "+ep1.getYearSalary()+"ÀÔ´Ï´Ù.");
-		
-		
-		//¹®Á¦4
-		//Employee nameArray[i]=new Employee();
-		Scanner sc=new Scanner(System.in);
-		int[] salaryArr={200,300,400,500,350};
-		String[] id={"001","002","003","004","005"};
-		String[] name={"°­","ÃÖ","±è","¹Ú","À¯"};
-		for(int i=0; i<id.length; i++){
-			Employee epy=new Employee(salaryArr[i],id[i],name[i]);
-			System.out.println(name[i]+"»ç¿øÀÇ »ç¿ø¹øÈ£´Â "+id[i]+"ÀÌ°í, º¸³Ê½º¸¦ Æ÷ÇÔÇÑ ¿¬ºÀÀº "+epy.getYearSalary()+"ÀÔ´Ï´Ù.");
-		}
-	}
-
-}
->>>>>>> refs/remotes/origin/master

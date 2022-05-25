@@ -1,5 +1,4 @@
 package Chapter06;
-<<<<<<< HEAD
 import java.util.*;
 
 public class HomeWork0520 {
@@ -42,49 +41,6 @@ class Rect{
 	
 	Rect(){
 		this.name="ë„¤ëª¨";
-=======
-import java.util.Scanner;
-
-public class HomeWork0520 {
-
-	public static void main(String[] args) {
-		//±âº»»ý¼ºÀÚ·Î ÀÌ¸§Àº ³×¸ð, °¡·Î12, ¼¼·Î12ÀÇ °ªÀ» °¡Áø rect¸Þ¼Òµå »ý¼º
-		Rect rect1=new Rect();
-		Scanner sc=new Scanner(System.in);
-		
-		System.out.print("°´Ã¼ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä: ");
-		String str=sc.nextLine();
-		System.out.println();
-		System.out.print("°¡·Î ±æÀÌ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
-		int width=sc.nextInt();
-		System.out.println();
-		System.out.println("¼¼·Î ±æÀÌ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
-		int height=sc.nextInt();
-		System.out.println();
-		//2. ÀÌ¸§,°¡·Î,¼¼·Î¸¦ ÀÔ·Â¹ÞÀº rect¸Þ¼Òµå »ý¼º
-		Rect rect2=new Rect(str,width,height);
-		
-		//3. 1,2¹ø °´Ã¼ Á¤º¸¸¦ Ãâ·Â
-		System.out.println("1¹ø °´Ã¼ ÀÌ¸§:"+rect1.name+" °¡·Î:"+rect1.getWidth()+
-				" ¼¼·Î:"+rect1.getHeight()+" ¸éÀû:"+rect1.getArea()+" µÑ·¹:"+rect1.getCircumference());
-		System.out.println("2¹ø °´Ã¼ ÀÌ¸§:"+rect2.name+" °¡·Î: "+rect2.getWidth()+
-				" ¼¼·Î:"+rect2.getHeight()+" ¸éÀû:"+rect2.getArea()+" µÑ·¹:"+rect2.getCircumference());
-		
-		//4. 1¹ø °´Ã¼¿¡¼­ ÇöÀç °¡·ÎÀÇ °ª¿¡ +2ÇÑ °ªÀ¸·Î ¸éÀû°ú µÑ·¹¸¦ Àç°è»êÇÏ¿© Ãâ·Â
-		rect1.width+=2;
-		System.out.println("1¹ø °´Ã¼ ÀÌ¸§:"+rect1.name+" °¡·Î:"+rect1.getWidth()+
-				" ¼¼·Î:"+rect1.getHeight()+" ¸éÀû:"+rect1.getArea()+" µÑ·¹:"+rect1.getCircumference());
-	}
-
-}
-class Rect{
-	String name;
-	int width;//°¡·Î
-	private int height; //¼¼·Î
-	
-	Rect(){
-		this.name="³×¸ð";
->>>>>>> refs/remotes/origin/master
 		this.width=12;
 		this.height=23;
 	}

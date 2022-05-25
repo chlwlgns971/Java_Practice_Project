@@ -13,11 +13,11 @@ public class Java_20220506 {
 		System.out.println("res="+res2);
 		
 		Scanner sc=new Scanner(System.in);
-		System.out.print("¹®ÀÚ¿­À» ÀÔ·ÂÇØÁÖ¼¼¿ä:");
+		System.out.print("ë¬¸ìì—´ì„ ì…ë ¥í•´ì£¼ì„¸ìš”:");
 		String inputText=sc.nextLine();
 		System.out.println(inputText);
 		
-		System.out.print("¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä:");
+		System.out.print("ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”:");
 		int a=sc.nextInt();
 		int c=a+a++; //3+3
 		int b=a+(++a); //4+5

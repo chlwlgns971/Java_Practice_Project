@@ -1,6 +1,5 @@
 package Chapter06;
 
-<<<<<<< HEAD
 //ìžë™ì°¨ í´ëž˜ìŠ¤(ì„¤ê³„ë„)
 public class Car {
 	//í•„ë“œ=ë©¤ë²„ë³€ìˆ˜=ì†ì„±
@@ -38,45 +37,6 @@ public class Car {
 	//ìƒì„±ìž ì˜¤ë²„ë¡œë”©
 	Car(String model, String color, int maxSpeed){
 		//ë§¤ê°œë³€ìˆ˜ì˜ ê°’ì„ ë©¤ë²„ë³€ìˆ˜ì— í• ë‹¹(ëŒ€ìž…)
-=======
-//ÀÚµ¿Â÷ Å¬·¡½º(¼³°èµµ)
-public class Car {
-	//ÇÊµå=¸â¹öº¯¼ö=¼Ó¼º
-	//Á¦Á¶»ç
-	String company="±â¾Æ";
-	//¸ðµ¨
-	String model;
-	String color;
-	//ÃÖ´ë½ºÇÇµå
-	int maxSpeed;
-	//ÇöÀç ½ºÇÇµå
-	int speed;
-	
-	//»ý¼ºÀÚ: °´Ã¼°¡ »ý¼ºµÉ ¶§ ÀÚµ¿À¸·Î ½ÇÇà(ÃÊ±â°ªÀ» ¼¼ÆÃ ½Ã »ç¿ë)
-	//±âº»»ý¼ºÀÚ
-	Car(){}
-	//»ý¼ºÀÚ ¿À¹ö·Îµù. ¸Å°³º¯¼ö ¼ø¼­ or °¹¼ö or Å¸ÀÔÀÌ ´Þ¶ó¾ßÇÔ
-	Car(String model){
-		//model: ÀÌ°÷À¸·Î ´øÁ®Áö´Â ¹®ÀÚÇü ÆÄ¶ó¹ÌÅÍ¸¦ ´ã¾ÆÁÖ´Â ¸Å°³º¯¼ö(Áö¿ªº¯¼ö: ÀÌ ºí·ÏÀ» ¹þ¾î³ª¸é ¸Þ¸ð¸®¿¡¼­ »ç¶óÁü)
-		//¸â¹öº¯¼ö<=¸Å°³º¯¼ö¸¦ ÇÒ´ç(´ëÀÔ)
-//		this.model=model;
-//		this.color = "Àº»ö";
-//		this.maxSpeed = 250;
-		// this: »ý¼ºÀÚÀÎµ¥ ´Ù¸¥ »ý¼ºÀÚ¸¦ È£Ãâ->Ã¹ ÁÙ¿¡¼­¸¸ Çã¿ë=>´Ù¸¥ »ý¼ºÀÚ È£Ãâ
-		this(model, "Àº»ö", 250);
-	}
-	//»ý¼ºÀÚ ¿À¹ö·Îµù
-	Car(String model, String color){
-		//¸Å°³º¯¼öÀÇ °ªÀ» ¸â¹öº¯¼ö¿¡ ÇÒ´ç(´ëÀÔ)
-//		this.model=model;
-//		this.color=color;
-//		this.maxSpeed = 250;
-		this(model, color, 250);
-	}
-	//»ý¼ºÀÚ ¿À¹ö·Îµù
-	Car(String model, String color, int maxSpeed){
-		//¸Å°³º¯¼öÀÇ °ªÀ» ¸â¹öº¯¼ö¿¡ ÇÒ´ç(´ëÀÔ)
->>>>>>> refs/remotes/origin/master
 		this.model=model;
 		this.color=color;
 		this.maxSpeed=maxSpeed;

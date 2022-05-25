@@ -5,9 +5,9 @@ public class PersonTest {
 	public static void main(String[] args) {
 		PersonTest pt=new PersonTest();
 		Person p1=new Person();
-		Person p2=new Person("ÃÖÁöÈÆ",97,02,12);
+		Person p2=new Person("ìµœì§€í›ˆ",97,02,12);
 		MyDate md1=new MyDate(99,11,29);
-		Person p3=new Person("ÃÖÁ¤ÈÆ",md1);
+		Person p3=new Person("ìµœì •í›ˆ",md1);
 		
 		personInfo(p1);
 		pt.personPrint(p1);
@@ -18,10 +18,10 @@ public class PersonTest {
 
 	}
 	public static void personInfo(Person P){
-		System.out.println(P+"ÀÇ ÀÌ¸§Àº "+P.getName()+"ÀÌ°í, »ı³â¿ùÀÏÀº "+P.getBirth()+"ÀÔ´Ï´Ù.");
+		System.out.println(P+"ì˜ ì´ë¦„ì€ "+P.getName()+"ì´ê³ , ìƒë…„ì›”ì¼ì€ "+P.getBirth()+"ì…ë‹ˆë‹¤.");
 	}
 	public void personPrint(Person P){
-		System.out.println(P+"ÀÇ ÀÌ¸§Àº "+P.getName()+"ÀÌ°í, »ı³â¿ùÀÏÀº "+P.getBirth()+"ÀÔ´Ï´Ù.");
+		System.out.println(P+"ì˜ ì´ë¦„ì€ "+P.getName()+"ì´ê³ , ìƒë…„ì›”ì¼ì€ "+P.getBirth()+"ì…ë‹ˆë‹¤.");
 	}
 	
 
