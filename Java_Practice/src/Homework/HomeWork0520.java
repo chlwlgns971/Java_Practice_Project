@@ -1,4 +1,4 @@
-package Chapter06;
+package Homework;
 import java.util.*;
 
 public class HomeWork0520 {
