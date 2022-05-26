@@ -5,13 +5,13 @@ public class WhileTest {
 	public static void main(String[] args) {
 //		Scanner sc=new Scanner(System.in);
 //		while(true){
-//			System.out.print("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+//			System.out.print("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 //			String str=sc.nextLine();
 //			if (str.equals("Computer")) {
-//				System.out.println("Á¢±ÙÇã¿ëµÇ¾ú½À´Ï´Ù."); 
+//				System.out.println("ì ‘ê·¼í—ˆìš©ë˜ì—ˆìŠµë‹ˆë‹¤."); 
 //				break;
 //			}
-//			else System.out.println("ºñ¹Ğ¹øÈ£°¡ ´Ù¸¨´Ï´Ù."); 
+//			else System.out.println("ë¹„ë°€ë²ˆí˜¸ê°€ ë‹¤ë¦…ë‹ˆë‹¤."); 
 //		}
 		LoopWhile lw=new LoopWhile();
 		//lw.wl();
@@ -38,31 +38,31 @@ class LoopWhile{
 		String str1="";
 		String str2="";
 		while(i<=5){
-			System.out.print("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.print("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 			int a=sc.nextInt();
 			if (a%2==0) str1+=a+" ";
 			else str2+=a+" ";
 			i++;
 		}
-		System.out.println("ÀÔ·ÂÇÑ Â¦¼ö: "+str1);
-		System.out.println("ÀÔ·ÂÇÑ È¦¼ö: "+str2);
+		System.out.println("ì…ë ¥í•œ ì§ìˆ˜: "+str1);
+		System.out.println("ì…ë ¥í•œ í™€ìˆ˜: "+str2);
 	}
 	public void wl3(){
 		int i=1;
-		int sum1=0; //È¦¼öÇÕ
-		int sum2=0; //Â¦¼öÇÕ
+		int sum1=0; //í™€ìˆ˜í•©
+		int sum2=0; //ì§ìˆ˜í•©
 		
 		while(i<=100){
 			if((i%2)!=0) sum1+=i;
 			else sum2+=i;
 			i++;
 		}
-		System.out.println("1ºÎÅÍ 100±îÁö È¦¼öµéÀÇ ÇÕÀº "+sum1+"ÀÔ´Ï´Ù.");
-		System.out.println("1ºÎÅÍ 100±îÁö Â¦¼öµéÀÇ ÇÕÀº "+sum2+"ÀÔ´Ï´Ù.");
+		System.out.println("1ë¶€í„° 100ê¹Œì§€ í™€ìˆ˜ë“¤ì˜ í•©ì€ "+sum1+"ì…ë‹ˆë‹¤.");
+		System.out.println("1ë¶€í„° 100ê¹Œì§€ ì§ìˆ˜ë“¤ì˜ í•©ì€ "+sum2+"ì…ë‹ˆë‹¤.");
 	}
 	public void wl4(){
 		Scanner sc=new Scanner(System.in);
-		System.out.print("while¹® ±¸±¸´ÜÀ» Ãâ·ÂÇÒ ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.print("whileë¬¸ êµ¬êµ¬ë‹¨ì„ ì¶œë ¥í•  ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 		int num=sc.nextInt();
 		int i=1;
 		while(i<10){
@@ -81,24 +81,24 @@ class LoopWhile{
 			sum+=rand;
 			i++;
 		}
-		System.out.println("¹ß»ıÇÑ ·£´ı ¼ıÀÚ: "+str);
-		System.out.println("¹ß»ıÇÑ ·£´ı ¼ıÀÚµéÀÇ ÇÕ: "+sum);
+		System.out.println("ë°œìƒí•œ ëœë¤ ìˆ«ì: "+str);
+		System.out.println("ë°œìƒí•œ ëœë¤ ìˆ«ìë“¤ì˜ í•©: "+sum);
 	}
 	//whileTest7 (2022.05.11)
 		public void insertScore(){
 			Scanner sc=new Scanner(System.in);
 			int count=0;
 			int num=0;
-			String str1=""; //¿Ã¹Ù¸£°Ô ÀÔ·ÂÇÑ °ª
-			String str2=""; //ÀÔ·ÂÇÑ ¸ğµç °ª
-			String str3=""; //¿Ã¹Ù¸£Áö ¾ÊÀº °ª
+			String str1=""; //ì˜¬ë°”ë¥´ê²Œ ì…ë ¥í•œ ê°’
+			String str2=""; //ì…ë ¥í•œ ëª¨ë“  ê°’
+			String str3=""; //ì˜¬ë°”ë¥´ì§€ ì•Šì€ ê°’
 			while(true){
-				System.out.println("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä(1~100Á¡»çÀÌ): ");
+				System.out.println("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”(1~100ì ì‚¬ì´): ");
 				num=sc.nextInt();
 				str2+=num+" ";
 				if(num>100 || num<1){
 					str3+=num+" ";
-					System.out.println("Á¤È®ÇÑ Á¡¼ö°¡ ¾Æ´Õ´Ï´Ù.");
+					System.out.println("ì •í™•í•œ ì ìˆ˜ê°€ ì•„ë‹™ë‹ˆë‹¤.");
 				}
 				else{
 					str1+=num+" ";
@@ -106,8 +106,8 @@ class LoopWhile{
 					if (count==5) break;
 				}
 			}
-			System.out.println("ÀÔ·ÂÇÑ ¸ğµç Á¡¼ö: "+str2);
-			System.out.println("¿Ã¹Ù¸£°Ô ÀÔ·ÂÇÑ 5°³ÀÇ Á¡¼ö: "+str1);
-			System.out.println("¿Ã¹Ù¸£Áö ¾ÊÀº ÀÔ·ÂÁ¡¼ö: "+str3);
+			System.out.println("ì…ë ¥í•œ ëª¨ë“  ì ìˆ˜: "+str2);
+			System.out.println("ì˜¬ë°”ë¥´ê²Œ ì…ë ¥í•œ 5ê°œì˜ ì ìˆ˜: "+str1);
+			System.out.println("ì˜¬ë°”ë¥´ì§€ ì•Šì€ ì…ë ¥ì ìˆ˜: "+str3);
 		}
 }

@@ -1,18 +1,20 @@
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 public class ForTest_class {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		For4 for4=new For4();
 		Scanner sc=new Scanner(System.in);
-//		System.out.print("±¸±¸´Ü ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+//		System.out.print("êµ¬êµ¬ë‹¨ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 //		int num=sc.nextInt();
 //		for4.guguProc(num);
 //		for4.minusCount(num);
 //		System.out.println("\n");
 //		System.out.println(for4.guguProc2(num));
-		System.out.println("hap1 ¸Ş¼ÒµåÀÇ °á°ú´Â "+for4.hap1()+"ÀÔ´Ï´Ù.");
+		System.out.println("hap1 ë©”ì†Œë“œì˜ ê²°ê³¼ëŠ” "+for4.hap1()+"ì…ë‹ˆë‹¤.");
 		for4.hap2();
 	}
 
@@ -35,7 +37,7 @@ class For4{
 			System.out.println(a+"*"+i+"="+i*a);
 		}
 	}
-	//1~10±îÁö ÇÕÀ» ±¸ÇØ¼­ ¸®ÅÏÇÏ´Â ¸Ş¼Òµå
+	//1~10ê¹Œì§€ í•©ì„ êµ¬í•´ì„œ ë¦¬í„´í•˜ëŠ” ë©”ì†Œë“œ
 	public int hap1(){
 		int a=0;
 		for(int i=10; i>=1; i--){
@@ -44,12 +46,12 @@ class For4{
 		return a;
 	}
 	
-	//10~1±îÁö ÇÕÀ» ±¸ÇØ¼­ Ãâ·ÂÇÏ´Â ¸Ş¼Òµå¸¦ ÀÛ¼º
+	//10~1ê¹Œì§€ í•©ì„ êµ¬í•´ì„œ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œë¥¼ ì‘ì„±
 	public void hap2(){
 		int a=0;
 		for(int i=10; i>=1; i--){
 			a+=i;
 		}
-		System.out.println("10~1±îÁöÀÇ ÇÕÀº "+a+"ÀÔ´Ï´Ù.");
+		System.out.println("10~1ê¹Œì§€ì˜ í•©ì€ "+a+"ì…ë‹ˆë‹¤.");
 	}
 }

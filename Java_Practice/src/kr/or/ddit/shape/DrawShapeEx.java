@@ -1,3 +1,5 @@
+package kr.or.ddit.shape;
+
 public class DrawShapeEx {
 	public static void main(String[] args) {
 		Point[] p = new Point[] {new Point(10,10),new Point(20,20),new Point(30,30)};
