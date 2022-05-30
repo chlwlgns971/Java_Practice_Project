@@ -1,5 +1,6 @@
 package Chapter10;
 import java.util.Scanner;
+import java.util.Map;
 /*자바의 예외
 - 에외란 error에 일종이며, 발생시 시스템 및 프로그램을 수행 불능상태 만들고 비정상적 종료됨  
 - 이를 막기 위해 예외 처리를 통해, 시스템 및 프로그램을 정상종료로 유도
@@ -100,7 +101,31 @@ public class TryCatch01 {
 	public static void main(String[] args) {
 		Solution s1=new Solution();
 		s1.sol1();
-
+		
+		Map map=null;
+		try {
+			int num=s1.sol2(map);
+		} 
+		catch (NullPointerException e) {
+			System.out.println("오류원인: "+e.getMessage());
+		}
+		catch (Exception e) {
+			System.out.println("오류원인: "+e.getMessage());
+		}
+		UseException ue=new UseException();
+		try {
+	         ue.useExcept();
+	         
+	      }catch(RandException e) {
+	         System.out.println("오류 원인 : "+ e.getMessage());
+	         
+	      }catch(Exception e) {
+	         System.out.println("오류 원인 : "+ e.getMessage());
+	         
+	      }
+	      
+	      
+	      System.out.println("시스템 종료");
 	}
 
 }
@@ -130,7 +155,9 @@ class Solution{
 			System.out.println("잘못된 인덱스 값입니다.");
 		}
 	}
-	public void sol2() {
-		
+	public int sol2(Map map) throws NullPointerException, Exception{
+		int res=Integer.parseInt(map.get("홍길돌").toString());
+		return res;
 	}
+	
 }
