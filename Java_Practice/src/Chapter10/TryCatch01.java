@@ -99,9 +99,10 @@ import java.util.Map;
 public class TryCatch01 {
 
 	public static void main(String[] args) {
+		//예제1
 		Solution s1=new Solution();
 		s1.sol1();
-		
+		//예제2
 		Map map=null;
 		try {
 			int num=s1.sol2(map);
@@ -112,6 +113,7 @@ public class TryCatch01 {
 		catch (Exception e) {
 			System.out.println("오류원인: "+e.getMessage());
 		}
+		//예제3
 		UseException ue=new UseException();
 		try {
 	         ue.useExcept();
@@ -126,8 +128,45 @@ public class TryCatch01 {
 	      
 	      
 	      System.out.println("시스템 종료");
+	      
+	      
+	      //예제5
+	      try {
+	    	  startInstall();
+	    	  copyFile();
+	      }
+	      catch(SpaceException e) {
+	    	  System.out.println("에러메세지: "+e.getMessage());
+	    	  e.printStackTrace();
+	    	  System.out.println("공간 확보 후 다시 설치 바람");
+	      }
+	      catch(MemoryException e) {
+	    	  System.out.println("에러메세지: "+e.getMessage());
+	    	  e.printStackTrace();
+	    	  System.out.println("메모리 확보 후 다시 설치 바람");
+	      }
+	      
 	}
-
+	public static void startInstall() throws MemoryException, SpaceException{
+		if(!enoughSpace()) {
+			throw new SpaceException("설치공간 부족");
+		}
+		else if(!enoughMemory()) {
+			throw new MemoryException("메모리 부족");
+		}
+	}
+	public static void copyFile() {
+		
+	}
+	public static void deleteFile() {
+		
+	}
+	public static boolean enoughSpace() {
+		return false;
+	}
+	public static boolean enoughMemory() {
+		return false;
+	}
 }
 class Solution{
 	Scanner sc=new Scanner(System.in);
