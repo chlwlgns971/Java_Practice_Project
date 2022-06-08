@@ -65,16 +65,16 @@ class Ex1{
 		return max;
 	}
 }
-class SearchStu{
+class StudentScore{
 	private int stuNum;
 	private String name;
 	private int score;
-	SearchStu(){
+	StudentScore(){
 		this.stuNum=001;
 		this.name="최지훈";
 		this.score=90;
 	}
-	SearchStu(int stuNum, String name, int score){
+	StudentScore(int stuNum, String name, int score){
 		this.stuNum = stuNum;
 		this.name = name;
 		this.score = score;
@@ -88,22 +88,22 @@ class SearchStu{
 	}
 	@Override
 	public String toString() {
-		return "SearchStu [stuNum=" + stuNum + ", name=" + name + ", score=" + score + "]";
+		return "StudentScore [stuNum=" + stuNum + ", name=" + name + ", score=" + score + "]";
 	}
 	
 }
 class Ex2{
-	ArrayList<SearchStu> student =new ArrayList <>();
+	ArrayList<StudentScore> student =new ArrayList <>();
 	public void insertScore(int stuNum, String name, int score) {
-		student.add(new SearchStu(stuNum,name,score));
+		student.add(new StudentScore(stuNum,name,score));
 	}
 	public void selectAll() {
 		System.out.println(student);
 	}
 	public void selectOne(String name) {
-		Iterator<SearchStu> iterator=student.iterator();
+		Iterator<StudentScore> iterator=student.iterator();
 		while(true) {
-			SearchStu ss=iterator.next();
+			StudentScore ss=iterator.next();
 			if(ss.getName().equals(name)){
 	            System.out.println("학생을 찾았음 : \n"+ss);
 	            break;
