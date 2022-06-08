@@ -1,7 +1,46 @@
 package Chapter11;
 import java.util.*;
 
-
+/*
+컬렉션 프레임워크 (Collection Framework)
+- 자료구조를 사용해서 객체들을 효율적으로 관리할 수 있도록 인터페이스와 
+  구현 클래스를 java.util 패키지에서 제공함
+- 프레임워크 : 사용 방법을 정해놓은 라이브러리
+- 주요 인터페이스로 List, Set, Map이 있음
+  collection                               <=interface  
+   List           Set          Map         <=interface
+     ArrayList      HashSet      HashMap   <=class       
+     Vector         TreeSet      TreeMap
+     LinkedList                  Hashtable
+                                 Properties
+[1] ArrayList
+  . ArrayList는 List 인터페이스를 상속받은 클래스로 크기가 가변적으로 변하는 
+    선형리스트
+  . 일반적인 배열과 같은 순차리스트이며 인덱스로 내부의 객체를 관리
+  . ArrayList는 객체들이 추가되어 저장 용량(capacity)을 초과한다면 
+    자동으로 부족한 크기만큼 저장 용량(capacity)이 늘어난다 
+  . 주요메서드 : add(Object o), add(int index, Object o),
+              get(int index), remove(int index), clear(), 
+              contains(Object o), isEmpty(), indexOf(Object o),
+              size(), asList(), iterator()   
+ 1) ArrayList 선언 
+   ArrayList list = new ArrayList();//타입 미설정 Object로 선언
+   ArrayList<Student> members = new ArrayList<Student>();//Student객체만 사용가능
+   ArrayList<Integer> num = new ArrayList<Integer>();//타입설정 Integer객체 만 사용가능
+   ArrayList<Integer> num2 = new ArrayList<>();//new에서 타입 파라미터 생략가능
+   ArrayList<Integer> num3 = new ArrayList<Integer>(10);//초기 용량(capacity)지정
+   ArrayList<Integer> list2 = new ArrayList<Integer>(Arrays.asList(1,2,3));//생성시 값추가
+ 
+ 2) iterator() 메서드 
+  . iterator()는 반복을 통해 순회하면서 탐색할 때 사용
+  . iterator()를 사용하기 위해선 객체를 먼저 생성해주어야 하며, 다음과 같은 
+    메소드를 지원
+  . hasNext() : 다음 엘리먼트가 있는지 확인 즉, 현재 위치에서 다음 위치로 
+    이동할 수 있는지 판단
+  . next() : 다음 엘리먼트를 가져오는 역할
+  . remove() : next()로 가져온 엘리먼트를 삭제
+    
+(사용예) 요일들을 저장할 수있는 ArrayList를 생성하고 이를 조작하는 프로그램 작성*/
 
 public class ListCollection {
 
