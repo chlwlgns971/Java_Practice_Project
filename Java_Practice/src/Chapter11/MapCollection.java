@@ -1,4 +1,5 @@
 package Chapter11;
+import java.util.*;
 
 /*[2] Map
 . Collection 인터페이스와는 다른 저장 방식으로 데이터 저장 
@@ -46,8 +47,21 @@ package Chapter11;
 public class MapCollection {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Map<Integer, String> map= new HashMap<>();
+		map.put(1000, "황희찬");
+		map.put(1001, "손흥민");
+		map.put(1002, "황의조");
+		map.put(1003, "이강인");
+		System.out.println(map.get(1001));
+		Set<Integer> keys=map.keySet();
+		Iterator<Integer> iter=keys.iterator();
+		System.out.println("map의 사이즈: "+map.size());
+		
+		while(iter.hasNext()) {
+			int stID=iter.next().intValue();
+			String name=map.get(stID);
+			System.out.println(stID+", "+name);
+		}
 	}
 
 }
