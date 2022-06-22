@@ -59,7 +59,7 @@ public class ArrayListTest {
 		//==>리스트에 '비교객체'가 있으면 '비교객체'가 저장되어 있는 index값을 반환하고 없으면 -1을 반환한다.
 		System.out.println("1.BBBB 위치값: "+list2.indexOf("BBBB"));
 		System.out.println("1.BBBB 위치값: "+list2.lastIndexOf("BBBB"));
-		System.out.println("1.BBBB 위치값: "+list2.indexOf("HHHH"));
+		System.out.println("1.HHHH 위치값: "+list2.indexOf("HHHH"));
 		System.out.println();
 		
 		//toArray()==>리스트 안의 데이터를 배열로 변환하여 반환한다.=>기본적으로 Object형 배열로 변환한다.
@@ -91,13 +91,15 @@ class Ex{
 		System.out.println("======1번문제답======");
 		for(int i=0; i<list.size(); i++) {
 			if(list.get(i).substring(0, 1).equals("김")) System.out.println(list.get(i));
+			//if(list.get(i).indexOf("김")==0) System.out.println(list.get(i)); //이 방식으로도 가능함
+			//if(list.get(i).startsWith("김")) //list.get(i)가 "김"으로 시작하는지 검사해서 맞으면 true반환
 		}
 		
 	}
 	public void qa2() {
 		ArrayList<String> list=new ArrayList<String>();
 		for(int i=0; i<5; i++) {
-			System.out.print("별명을 입력하세요>>>");
+			System.out.print((i+1)+"번째 별명을 입력하세요>>>");
 			list.add(sc.nextLine());
 		}
 		int max=list.get(0).length();
@@ -116,10 +118,12 @@ class Ex{
 		ArrayList<String> list=new ArrayList<String>();
 		ArrayList<Integer> index=new ArrayList<Integer>();
 		for(int i=0; i<5; i++) {
-			System.out.print("별명을 입력하세요>>>");
+			System.out.print((i+1)+"번째 별명을 입력하세요>>>");
 			list.add(sc.nextLine());
 		}
 		int max=list.get(0).length();
+		index.add(0);
+		
 		for(int i=1; i<list.size(); i++) {
 			if(max<list.get(i).length()) {
 				max=list.get(i).length();
