@@ -62,10 +62,14 @@ public class ListSortTest {
 		System.out.println("===============================================");
 		
 		//문제
-		//Member의 회원번호(num)의 내림차순으로 정렬하는 외부정렬 기준 클래스를 이용하여 정렬하시오
-		//외부정렬 기준을 지정해서 정렬하기
+//		Member의 회원번호(num)의 내림차순으로 정렬하는 외부정렬 기준 클래스를 이용하여 정렬하시오
+//		외부정렬 기준을 지정해서 정렬하기
 		Collections.sort(memList,new Desc2());
-		System.out.println("내림차순 정렬후: "+memList);
+		System.out.println("내림차순 정렬후...");
+		for(Member mem:memList) {
+			System.out.println(mem);
+		}
+		System.out.println("===============================================");
 		
 		/*
 		문제) 학번, 이름, 국어점수, 영어점수, 수학점수, 총점, 등수를 멤버로 갖는 Student클래스를 만든다. 이 Student클래스의 생성자에서는 
@@ -76,6 +80,39 @@ public class ListSortTest {
 		
 		단 등수는 학생관리를 처리하는 클래스에서 구하도록 하는데 List에 전체 데이터가 추가된 후에 처리되도록 한다.(클래스명:StudentTest)
 		*/
+		ArrayList<Student> stuList=new ArrayList<Student>();
+		stuList.add(new Student(1,"김아랑",90,90,90));
+		stuList.add(new Student(2,"최지훈",20,20,20));
+		stuList.add(new Student(3,"김태훈",30,30,70));
+		stuList.add(new Student(4,"최영환",90,90,70));
+		stuList.add(new Student(5,"김태환",50,60,30));
+		stuList.add(new Student(6,"이상혁",80,90,80));
+		stuList.add(new Student(7,"손흥민",20,50,70));
+		stuList.add(new Student(8,"이강인",60,80,90));
+		stuList.add(new Student(9,"한수진",60,60,60));
+		stuList.add(new Student(10,"김혜은",70,70,70));
+		
+		StudentTest st=new StudentTest();
+		st.setRanking(stuList);
+		System.out.println("정렬전...");
+		for(Student stu: stuList){
+			System.out.println(stu);
+		}
+		System.out.println("===============================================");
+		
+		Collections.sort(stuList);
+		System.out.println("학번 오름차순 정렬후...");
+		for(Student stu:stuList) {
+			System.out.println(stu);
+		}
+		System.out.println("===============================================");
+		
+		Collections.sort(stuList,new ScoreDesc());
+		System.out.println("총점 비교후 총점 같으면 이름순으로 정렬...");
+		for(Student stu:stuList) {
+			System.out.println(stu);
+		}
+		System.out.println("===============================================");
 	}
 
 }
@@ -117,9 +154,31 @@ class Member implements Comparable<Member>{
 		this.name = name;
 		this.tel = tel;
 	}
+	
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
 	public String getName() {
 		return name;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
 	@Override
 	public String toString() {
 		return "Member [num=" + num + ", name=" + name + ", tel=" + tel + "]";
@@ -131,17 +190,110 @@ class Member implements Comparable<Member>{
 	}
 	
 }
-class Desc2 implements Comparator<Integer>{
+class Desc2 implements Comparator<Member>{
 
 	@Override
-	public int compare(Integer o1, Integer o2) {
-		if(o1>o2) {
-			return -1;
+	public int compare(Member mem1, Member mem2) {
+		int result = ((Integer)mem1.getNum()).compareTo(mem2.getNum())*-1;
+		return result;
+	}
+	
+}
+class Student implements Comparable<Student>{
+	private int stuNum; //학번
+	private String stuName; //이름
+	private int lanScore; //국어점수
+	private int mathScore; //수학점수
+	private int engScore; //영어점수
+	private int totalScore; //총점
+	private int grade; //등수
+	
+	public Student(int stuNum, String stuName, int lanScore, int mathScore, int engScore) {
+		super();
+		this.stuNum = stuNum;
+		this.stuName = stuName;
+		this.lanScore = lanScore;
+		this.mathScore = mathScore;
+		this.engScore = engScore;
+		this.totalScore = lanScore+mathScore+engScore;
+	}
+	public int getStuNum() {
+		return stuNum;
+	}
+	public void setStuNum(int stuNum) {
+		this.stuNum = stuNum;
+	}
+	public String getStuName() {
+		return stuName;
+	}
+	public void setStuName(String stuName) {
+		this.stuName = stuName;
+	}
+	public int getLanScore() {
+		return lanScore;
+	}
+	public void setLanScore(int lanScore) {
+		this.lanScore = lanScore;
+	}
+	public int getMathScore() {
+		return mathScore;
+	}
+	public void setMathScore(int mathScore) {
+		this.mathScore = mathScore;
+	}
+	public int getEngScore() {
+		return engScore;
+	}
+	public void setEngScore(int engScore) {
+		this.engScore = engScore;
+	}
+	public int getTotalScore() {
+		return totalScore;
+	}
+	public void setTotalScore(int totalScore) {
+		this.totalScore = totalScore;
+	}
+	public int getGrade() {
+		return grade;
+	}
+	public void setGrade(int grade) {
+		this.grade = grade;
+	}
+	@Override
+	public int compareTo(Student stu) {
+		// 학번을 기준으로 한 내부 정렬기준
+		if(this.getStuNum()<stu.getStuNum()) return -1;
+		else if(this.getStuNum()==stu.getStuNum()) return 0;
+		else return 1;
+	}
+	@Override
+	public String toString() {
+		return "Student [stuNum=" + stuNum + ", stuName=" + stuName + ", lanScore=" + lanScore + ", mathScore="
+				+ mathScore + ", engScore=" + engScore + ", totalScore=" + totalScore + ", grade=" + grade + "]";
+	}
+	
+}
+class ScoreDesc implements Comparator<Student>{//외부정렬
+	@Override
+	public int compare(Student stu1, Student stu2) {
+		// 0 양수 음수
+		int result = ((Integer)stu1.getTotalScore()).compareTo(stu2.getTotalScore())*-1;
+		if(result == 0) result = stu1.getStuName().compareTo(stu2.getStuName());//총점이 같을 경우에는 이름순으로 오름차순으로 정렬
+		return result;//0이면 값이 같을때 변화 없음(-1이면 변하고 )
+	}	
+}
+class StudentTest{
+	public void setRanking(ArrayList<Student> stuList){
+		for(Student std1 : stuList){//기준 데이터를 구하는 반복문
+			int grade =1;//처음에는 1등으로 설정해 놓고 시작
+			for(Student std2 : stuList){//비교 대상을 구하는 반복문
+				//기분보다 비교 대상이 더 크면 rank값을 증가시킨다.
+				if(std1.getTotalScore() < std2.getTotalScore()){
+					grade++;
+				}
+			}
+			std1.setGrade(grade);
 		}
-		else if(o1<o2) {
-			return 1;
-		}
-		else return 0;
 	}
 	
 }
