@@ -1,5 +1,7 @@
 package Homework;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -73,7 +75,9 @@ class DAO{
 			while(testSet.size()<6) {
 				testSet.add((int)(Math.random()*45+1));
 			}
-			System.out.println("로또번호"+(i+1)+": "+testSet);
+			ArrayList list=new ArrayList(testSet);
+			Collections.sort(list);
+			System.out.println("로또번호"+(i+1)+": "+list);
 		}
 		System.out.println("받은 금액은 "+money+"원이고 거스롬돈은 "+money%1000+"원입니다.");
 	}
