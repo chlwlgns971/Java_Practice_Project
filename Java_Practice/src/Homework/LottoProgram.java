@@ -35,7 +35,7 @@ class Controller {
 					break Loop;
 				case 2:
 					System.out.println("감사합니다.");
-					break;
+					break Loop;
 				default:
 					System.out.println("잘못된 메뉴번호입니다.");
 					break;
@@ -58,13 +58,13 @@ class Controller {
 			else if(money<0)System.out.println("잘못된 금액입니다.");
 			else if(money<1000)System.out.println("입력금액이 너무 적습니다. 로또번호 구입 실패");
 			else {
-				new DTO().randomNum(money);
+				new DAO().randomNum(money);
 				break;
 			}
 		}
 	}
 }
-class DTO{
+class DAO{
 	public void randomNum(int money) {
 		//로또는 랜덤6자리
 		int count=money/1000;
