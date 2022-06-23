@@ -81,7 +81,7 @@ public class ListSortTest {
 		단 등수는 학생관리를 처리하는 클래스에서 구하도록 하는데 List에 전체 데이터가 추가된 후에 처리되도록 한다.(클래스명:StudentTest)
 		*/
 		ArrayList<Student> stuList=new ArrayList<Student>();
-		stuList.add(new Student(1,"김아랑",90,90,90));
+		stuList.add(new Student(1,"김아랑",90,90,90)); //학번, 이름, 국어점수, 수학점수, 영어점수 순
 		stuList.add(new Student(2,"최지훈",20,20,20));
 		stuList.add(new Student(3,"김태훈",30,30,70));
 		stuList.add(new Student(4,"최영환",90,90,70));
@@ -92,8 +92,10 @@ public class ListSortTest {
 		stuList.add(new Student(9,"한수진",60,60,60));
 		stuList.add(new Student(10,"김혜은",70,70,70));
 		
+		Collections.shuffle(stuList); //데이터 섞기
 		StudentTest st=new StudentTest();
-		st.setRanking(stuList);
+		st.setRanking(stuList); //등수 구하기
+		
 		System.out.println("정렬전...");
 		for(Student stu: stuList){
 			System.out.println(stu);
@@ -108,7 +110,7 @@ public class ListSortTest {
 		System.out.println("===============================================");
 		
 		Collections.sort(stuList,new ScoreDesc());
-		System.out.println("총점 비교후 총점 같으면 이름순으로 정렬...");
+		System.out.println("총점 역순정렬 총점 같으면 이름순으로 오름차순 정렬...");
 		for(Student stu:stuList) {
 			System.out.println(stu);
 		}
@@ -190,12 +192,20 @@ class Member implements Comparable<Member>{
 	}
 	
 }
+//Member의 회원번호(num)의 내림차순으로 정렬하는 외부정렬 기준 클래스를 이용하여 정렬하시오
+//외부정렬 기준을 지정해서 정렬하기
 class Desc2 implements Comparator<Member>{
 
 	@Override
 	public int compare(Member mem1, Member mem2) {
 		int result = ((Integer)mem1.getNum()).compareTo(mem2.getNum())*-1;
 		return result;
+		
+		/*
+		 * if(mem1.getNum()<mem2.getNum()) return 1; 
+		 * else if(mem1.getNum()==mem2.getNum()) return 0; 
+		 * else return -1;
+		 */
 	}
 	
 }
@@ -287,7 +297,7 @@ class StudentTest{
 		for(Student std1 : stuList){//기준 데이터를 구하는 반복문
 			int grade =1;//처음에는 1등으로 설정해 놓고 시작
 			for(Student std2 : stuList){//비교 대상을 구하는 반복문
-				//기분보다 비교 대상이 더 크면 rank값을 증가시킨다.
+				//기분보다 비교 대상이 더 크면 grade값을 증가시킨다.
 				if(std1.getTotalScore() < std2.getTotalScore()){
 					grade++;
 				}
