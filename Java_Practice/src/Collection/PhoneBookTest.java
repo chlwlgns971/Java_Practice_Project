@@ -20,12 +20,12 @@ public class PhoneBookTest {
 		 	Map의 구조는 key값을 이름을 사용하고 value값으로 phone클래스의 인스턴스로 한다.
 		 	이름이 같으면 이미 등록된 사람입니다. 출력(중복허용안함)
 		 */
-		new Controller().mainUI();	
+		new PbController().mainUI();	
 
 	}
 
 }
-class Controller{
+class PbController{
 	HashMap<String,PersonDTO> phonbook=new HashMap<>();
 	Scanner sc=new Scanner(System.in);
 	void mainUI() {
@@ -85,8 +85,7 @@ class Controller{
 			
 			System.out.print("전화번호를 입력하세요>>>");
 			hp=sc.nextLine();
-			phonbook.put(name, new PersonDTO(name,addr,hp));
-			System.out.println(name+" 전화번호 정보 등록 완료");
+			new PbDAO().insert(phonbook, name, addr, hp);
 		}
 	}
 	void menu2UI() { //전화번호 수정
@@ -97,9 +96,11 @@ class Controller{
 		if(phonbook.containsKey(name)) {
 			System.out.print("수정할 전화를 입력해주세요>>>");
 			hp=sc.nextLine();
-			phonbook.get(name).setHP(hp);
-			System.out.println("수정이 완료되었습니다.");
-			System.out.println(phonbook.get(name));
+			new PbDAO().update(phonbook, name, hp);
+			System.out.println("===========수정결과=============");
+			System.out.println("이름: "+phonbook.get(name).getName());
+			System.out.println("주소: "+phonbook.get(name).getAddr());
+			System.out.println("전화번호: "+phonbook.get(name).getHP());
 		}
 		else {
 			System.out.println("정보가 없는 사람입니다.");
@@ -111,8 +112,7 @@ class Controller{
 		System.out.print("삭제할 사람의 이름을 입력하세요>>>");
 		name=sc.nextLine();
 		if(phonbook.containsKey(name)) {
-			phonbook.remove(name);
-			System.out.println("삭제가 완료되었습니다.");
+			new PbDAO().delete(phonbook, name);
 		}
 		else {
 			System.out.println("정보가 없는 사람입니다.");
@@ -123,20 +123,43 @@ class Controller{
 		System.out.print("검색할 사람의 이름을 입력하세요>>>");
 		name=sc.nextLine();
 		if(phonbook.containsKey(name)) {
-			System.out.println("이름: "+phonbook.get(name).getName());
-			System.out.println("주소: "+phonbook.get(name).getAddr());
-			System.out.println("전화번호: "+phonbook.get(name).getHP());
+			new PbDAO().searchOne(phonbook, name);
 		}
 		else {
 			System.out.println("정보가 없는 사람입니다.");
 		}
 	}
 	void menu5UI() { //전화번호 전체검색
-		Set<String> keySet=phonbook.keySet();
+		new PbDAO().searchAll(phonbook);
+	}
+}
+class PbDAO{
+	public void insert(HashMap map, String name, String addr, String hp) {
+		map.put(name, new PersonDTO(name,addr,hp));
+		System.out.println(name+" 전화번호 정보 등록 완료");
+	}
+	public void update(HashMap map,String name, String hp) {
+		((PersonDTO) map.get(name)).setHP(hp);
+		System.out.println("수정이 완료되었습니다.");
+	}
+	public void delete(HashMap map, String name) {
+		map.remove(name);
+		System.out.println("삭제가 완료되었습니다.");
+	}
+	public void searchOne(HashMap map, String name) {
+		System.out.println("이름: "+((PersonDTO) map.get(name)).getName());
+		System.out.println("주소: "+((PersonDTO) map.get(name)).getAddr());
+		System.out.println("전화번호: "+((PersonDTO) map.get(name)).getHP());
+	}
+	public void searchAll(HashMap map) {
+		Set<String> keySet=map.keySet();
 		Iterator<String> it=keySet.iterator();
 		while(it.hasNext()) {
 			String key=it.next();
-			System.out.println(key+":"+phonbook.get(key));
+			System.out.println("이름: "+((PersonDTO) map.get(key)).getName());
+			System.out.println("주소: "+((PersonDTO) map.get(key)).getAddr());
+			System.out.println("전화번호: "+((PersonDTO) map.get(key)).getHP());
+			System.out.println("=====================");
 		}
 	}
 }
