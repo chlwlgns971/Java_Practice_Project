@@ -1,4 +1,4 @@
-package Collection;
+package Homework;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -24,7 +24,7 @@ public class PhoneBookTest {
 
 	}
 
-}
+} 
 class PbController{
 	HashMap<String,PersonDTO> phonbook=new HashMap<>();
 	Scanner sc=new Scanner(System.in);
@@ -167,6 +167,12 @@ class PersonDTO{
 	private String name; //이름
 	private String addr; //주소
 	private String HP; //휴대전화번호
+	public PersonDTO(String name, String addr, String hP) {
+		super();
+		this.name = name;
+		this.addr = addr;
+		HP = hP;
+	}
 	public String getName() {
 		return name;
 	}
@@ -185,12 +191,7 @@ class PersonDTO{
 	public void setHP(String hP) {
 		HP = hP;
 	}
-	public PersonDTO(String name, String addr, String hP) {
-		super();
-		this.name = name;
-		this.addr = addr;
-		HP = hP;
-	}
+	
 	@Override
 	public String toString() {
 		return "PersonDTO [name=" + name + ", addr=" + addr + ", HP=" + HP + "]";
