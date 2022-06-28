@@ -99,7 +99,6 @@ class HotelController{
 		System.out.println("=================================================");
 		System.out.println("             체크아웃 작업");
 		System.out.println("=================================================");
-		sc.nextLine();
 		System.out.print("체크아웃할 방의 번호를 입력해주세요>>>");
 		int roomNum=sc.nextInt();
 		sc.nextLine();
