@@ -1,5 +1,7 @@
 package Homework;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -47,7 +49,6 @@ class HotelController{
 			System.out.println("=================================================");
 			System.out.print("선택>>>");
 			str=sc.nextLine();
-			sc.nextLine();
 			try {
 				selectMenu=Integer.parseInt(str);
 				switch (selectMenu) {
@@ -111,20 +112,28 @@ class HotelController{
 		else System.out.println(roomNum+"호 객실은 존재하지 않습니다.");
 	}
 	public void menu3UI(HashMap hotelMap) {//객실상태조회
-		Set<Integer> keySet=hotelMap.keySet();
-		Iterator<Integer> it=keySet.iterator();
-		while(it.hasNext()) {
-			int key=it.next();
-			System.out.println("방 번호: "+((RoomDTO) hotelMap.get(key)).getRoomNum()+"   방 종류: "+((RoomDTO) hotelMap.get(key)).getRoomType()+
-					"   예약자이름: "+((RoomDTO) hotelMap.get(key)).getResName());
+		//방번호를 순서대로 나오게 하기위해서 방 번호만 List에 넣은 후 정렬하여 사용
+		ArrayList<Integer> numList=new ArrayList<Integer>(hotelMap.keySet());
+		Collections.sort(numList);
+		for(int num: numList) {
+			System.out.println("방 번호: "+((RoomDTO) hotelMap.get(num)).getRoomNum()+"   방 종류: "+((RoomDTO) hotelMap.get(num)).getRoomType()+
+					"   예약자이름: "+((RoomDTO) hotelMap.get(num)).getResName());
 			System.out.println();
 		}
+		//정렬 안한 상태로 출력
+//		Set<Integer> keySet=hotelMap.keySet();
+//		Iterator<Integer> it=keySet.iterator();
+//		while(it.hasNext()) {
+//			int key=it.next();
+//			System.out.println("방 번호: "+((RoomDTO) hotelMap.get(key)).getRoomNum()+"   방 종류: "+((RoomDTO) hotelMap.get(key)).getRoomType()+
+//					"   예약자이름: "+((RoomDTO) hotelMap.get(key)).getResName());
+//			System.out.println();
+//		}
 	}
 }
 class HotelDAO{
 	public void insert(HashMap hotelMap, int roomNum, String resName) {
 		((RoomDTO) hotelMap.get(roomNum)).setResName(resName);
-		//hotelMap.put(roomNum, new RoomDTO(roomNum,resName));
 		System.out.println("예약이 완료되었습니다.");
 	}
 	public void delete(HashMap hotelMap, int roomNum) {
