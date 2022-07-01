@@ -16,7 +16,7 @@ package Thread;
  		class MyThead implements Runnable{}
  */
 
-public class ThreadTest1 {
+public class CreateThread {
 
 	public static void main(String[] args) {
 		// 싱글 쓰레드 프로그램

@@ -1,7 +1,7 @@
 package Thread;
 
 //쓰레드의 상태를 출력하는 클래스
-public class ThreadTest5 {
+public class ThreadStatement {
 
 	public static void main(String[] args) {
 		StatePrintThread th=new StatePrintThread(new TargetThread());

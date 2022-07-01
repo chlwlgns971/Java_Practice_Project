@@ -2,7 +2,7 @@ package Thread;
 
 import javax.swing.JOptionPane;
 
-public class ThreadTest4 {
+public class InputData {
 
 	public static void main(String[] args) {
 		//값을 10초안에 입력받도록 하는 코드(10초가 지나면 프로그램 종료)

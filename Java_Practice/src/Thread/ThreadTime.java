@@ -1,6 +1,6 @@
 package Thread;
 
-public class ThreadTest2 {
+public class ThreadTime {
 	public static void main(String[] args) {
 		//Thread가 수행되는 시간 체크해보기
 		Thread th=new Thread(new MyRunner2());
