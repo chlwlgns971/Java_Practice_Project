@@ -17,7 +17,7 @@ public class RockPaperScissors {
 		if(num==1) aiResult="바위";
 		else if(num==2) aiResult="보";
 		else aiResult="가위";
-		
+		 
 		Thread th1=new DataInput();
 		Thread th2=new CountDown();
 		th1.start();
@@ -52,6 +52,25 @@ class CompareResult{
 		}
 		else result="올바른 입력값이 아닙니다. 게임에서 패배하셨습니다.";
 		return result;
+	}
+	public void compare2(String str1, String str2) { //또 다른 결과비교방법
+		switch(str1+str2) {
+		case "가위가위":
+		case "바위바위":
+		case "보보":
+			System.out.println("비겼습니다.");
+			break;
+		case "바위가위":
+		case "가위보":
+		case "보바위":
+			System.out.println("게임에서 승리하셨습니다.");
+			break;
+		case "바위보":
+		case "가위바위":
+		case "보가위":
+			System.out.println("게임에서 패배하셨습니다.");
+			break;
+		}
 	}
 }
 //데이터를 입력하는 쓰레드
