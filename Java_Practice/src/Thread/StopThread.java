@@ -5,7 +5,7 @@ package Thread;
  이 때 사용하던 자원을 정리하지 못하고 프로그램이 종료되어 나중에 실행되는 쓰레드나 프로그램에 영향을 줄 수 있다.
  그래서 stop()메서드는 비추천.
  */
-public class ThreadTest7 {
+public class StopThread {
 	
 	public static void main(String[] args) {
 		/*StopTestThread1 th1=new StopTestThread1();

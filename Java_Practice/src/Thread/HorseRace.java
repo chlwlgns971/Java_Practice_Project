@@ -23,7 +23,7 @@ import java.util.Collections;
  */
 public class HorseRace {
 	public static ArrayList<Horse> horseList;
-	static int staticRank=1;
+	static int currentRank=1;
 	
 	public static void main(String[] args) {
 		horseList=new ArrayList<Horse>();
@@ -107,8 +107,8 @@ class Horse extends Thread implements Comparable<Horse>{
 				e.printStackTrace();
 			}
 		}
-		this.setRank(HorseRace.staticRank);
-		HorseRace.staticRank++;
+		this.setRank(HorseRace.currentRank);
+		HorseRace.currentRank++;
 	}
 
 	@Override
@@ -147,5 +147,24 @@ class CheckLocate extends Thread{
 				e.printStackTrace();
 			}
 		}
+//		while(true) {
+//			if(HorseRace.currentRank==list.size()) break; //상태를 알려주는 것뿐만이 아니라 전역상수와 리스트길이가 같으면 종료된 것이므로 반복문 탈출 가능
+//			else {
+//				for(Horse h:list) {
+//					String str="";
+//					for(int i=1; i<=50; i++) {
+//						if(h.getLocate()==i)str+=">";
+//						else str+="-";
+//					}
+//					System.out.println(h.getHorseName()+":"+str);
+//				}
+//				System.out.println("============================================================");
+//				try {
+//					Thread.sleep(200);
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}
 	}
 }
