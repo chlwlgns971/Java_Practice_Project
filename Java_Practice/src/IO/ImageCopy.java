@@ -14,25 +14,42 @@ public class ImageCopy {
 	 '복사본_펭귄.jpg'파일로 복사하는 프로그램을 작성하시오
 	 */
 	public static void main(String[] args) {
-		try {
-			File img=new File("d:/d_other/images/펭귄.jpg");
-			byte[] arr=new byte[(int)img.length()];
-			DataInputStream inS=new DataInputStream(new FileInputStream(img));
-			int c; //읽어온 데이터를 저장할 변수
-			for(int i=0; i<img.length(); i++) {
-				c=inS.read();
-				arr[i]=(byte) c;
-			}
-			inS.close();
-			
-			FileOutputStream outS=new FileOutputStream("d:/d_other/연습용/복사본_펭귄.jpg");
-			outS.write(arr);
-			outS.close();
-			System.out.println("복사완료!");
-		} catch (IOException e) {
-			// TODO: handle exception
+		File img=new File("d:/d_other/images/펭귄.jpg");
+		if(!img.exists()) {
+			System.out.println(img.getName()+"파일이 없습니다.");
 		}
+		else {
+			try {
+				byte[] arr=new byte[(int)img.length()];
+				DataInputStream inS=new DataInputStream(new FileInputStream(img));
+				FileOutputStream outS=new FileOutputStream("d:/d_other/연습용/복사본_펭귄.jpg");
+				//방법1
+//				for(int i=0; i<img.length(); i++) {
+//					arr[i]=(byte)inS.read();
+//				}
+//				outS.write(arr);
+				
+				//방법2
+//				int data;
+//				while((data=inS.read())!=-1) {
+//					outS.write(data);
+//				}
+				
+				//방법3
+				int len=0;
+				while((len=inS.read(arr))>0) {
+					outS.write(arr,0,len);
+				}
+				outS.flush();
+				
+				inS.close();
+				outS.close();
+				System.out.println("복사완료!");
+			} catch (IOException e) {
+				// TODO: handle exception
+			}
 
+		}	
 	}
 
 }
