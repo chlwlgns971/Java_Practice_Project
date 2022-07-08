@@ -40,6 +40,10 @@ public class ImageCopy {
 				while((len=inS.read(arr))>0) {
 					outS.write(arr,0,len);
 				}
+//				int len=0;
+//				len=inS.read(arr);
+//				outS.write(arr,0,len);
+				
 				outS.flush();
 				
 				inS.close();
