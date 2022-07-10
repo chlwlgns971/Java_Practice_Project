@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<People>
+	<person>
+		<name>지훈</name>
+		<gender>Male</gender>
+		<job>Java Developer</job>
+	</person>
+	<person>
+		<name>유리</name>
+		<gender>Female</gender>
+		<job>Java Developer</job>
+	</person>
+	<person>
+		<name>용택</name>
+		<gender>Male</gender>
+		<job>Java Developer</job>
+	</person>
+	<person>
+		<name>무곤</name>
+		<gender>Male</gender>
+		<job>Java Developer</job>
+	</person>
+	<person>
+		<name>경환</name>
+		<gender>Male</gender>
+		<job>Java Developer</job>
+	</person>
+</People>
