@@ -33,13 +33,13 @@ public class DOMParser {
 	         if (node.getNodeType() == Node.ELEMENT_NODE)
 	         {
 	            Element eElement = (Element) node;
-	            //Create new Employee Object
+	            //Person 객체 생성
 	            person = new Person();
 	            person.setName(eElement.getElementsByTagName("name").item(0).getTextContent());
 	            person.setGender(eElement.getElementsByTagName("gender").item(0).getTextContent());
 	            person.setJob(eElement.getElementsByTagName("job").item(0).getTextContent());
 	             
-	            //Add Employee to list
+	            //생성한 객체를 리스트에 추가
 	            personList.add(person);
 	         }
 	      }
