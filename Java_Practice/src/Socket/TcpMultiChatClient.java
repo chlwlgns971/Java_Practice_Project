@@ -17,7 +17,7 @@ public class TcpMultiChatClient {
     	Socket socket = null;
       
      	try {
-     		socket = new Socket("localhost", 7777);
+     		socket = new Socket("192.168.143.5", 7777);
      		System.out.println("서버에 연결되었습니다");
      		System.out.println();
      		
