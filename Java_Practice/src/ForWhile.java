@@ -4,33 +4,33 @@ public class ForWhile {
 
 	public static void main(String[] args) {
 		/*
-		 ¹Ýº¹È½¼ö°¡ ¸íÈ®ÇÒ °æ¿ì for¹® »ç¿ë
-		 ¹Ýº¹È½¼ö°¡ ¸íÈ®ÇÏÁö ¾ÊÀ» °æ¿ì while »ç¿ë
+		 ë°˜ë³µíšŸìˆ˜ê°€ ëª…í™•í•  ê²½ìš° forë¬¸ ì‚¬ìš©
+		 ë°˜ë³µíšŸìˆ˜ê°€ ëª…í™•í•˜ì§€ ì•Šì„ ê²½ìš° while ì‚¬ìš©
 		 */
 		
 		int a=0;
-		//while·Î 5È¸ ¹Ýº¹
+		//whileë¡œ 5íšŒ ë°˜ë³µ
 		while(a<5){
-			System.out.println((a+1)+"È¸ ¹Ýº¹ ÁßÀÔ´Ï´Ù.");
+			System.out.println((a+1)+"íšŒ ë°˜ë³µ ì¤‘ìž…ë‹ˆë‹¤.");
 			a++;
 		}
-		//for¹®À¸·Î 5È¸ ¹Ýº¹
+		//forë¬¸ìœ¼ë¡œ 5íšŒ ë°˜ë³µ
 		for (int i=0; i<5; i++){
 			int rand=(int)(Math.random()*6+1); 
-			System.out.println(i+1+"¹øÂ° ÁÖ»çÀ§¸¦ ±¼¸³´Ï´Ù.");
-			System.out.println(rand+" ³ª¿Ô½À´Ï´Ù.");
+			System.out.println(i+1+"ë²ˆì§¸ ì£¼ì‚¬ìœ„ë¥¼ êµ´ë¦½ë‹ˆë‹¤.");
+			System.out.println(rand+" ë‚˜ì™”ìŠµë‹ˆë‹¤.");
 		}
 		For2 f2=new For2();
 		Scanner sc=new Scanner(System.in);
-		System.out.println("¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.println("ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 		int num=sc.nextInt();
-		System.out.println("1ºÎÅÍ "+num+"±îÁö ´õÇÑ °á°ú´Â "+f2.hap(num)+"ÀÔ´Ï´Ù.");
+		System.out.println("1ë¶€í„° "+num+"ê¹Œì§€ ë”í•œ ê²°ê³¼ëŠ” "+f2.hap(num)+"ìž…ë‹ˆë‹¤.");
 	}
 
 }
 class For2{
 	public int hap(int a){
-		//1ºÎÅÍ ÀÔ·Â¹ÞÀº °ª±îÁö ´õÇÏ°í ¸®ÅÏÇÑ´Ù.
+		//1ë¶€í„° ìž…ë ¥ë°›ì€ ê°’ê¹Œì§€ ë”í•˜ê³  ë¦¬í„´í•œë‹¤.
 		int sum=0;
 		for (int i=1; i<=a; i++){
 			sum+=i;

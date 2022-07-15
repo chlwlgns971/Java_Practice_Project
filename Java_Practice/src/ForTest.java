@@ -5,7 +5,7 @@ public class ForTest {
 	public static void main(String[] args) {
 		
 		Scanner sc=new Scanner(System.in);
-		System.out.print("¿øÇÏ´Â ±¸±¸´Ü ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+		System.out.print("êµ¬êµ¬ë‹¨ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 		int a=sc.nextInt();
 		
 		for (int i=1; i<=9; i++){

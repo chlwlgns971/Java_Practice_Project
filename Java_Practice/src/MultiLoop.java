@@ -5,20 +5,20 @@ public class MultiLoop {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		MultiLoop2 m2=new MultiLoop2();
-//		System.out.print("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+//		System.out.print("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 //		int num=sc.nextInt();
 //		for(int i=1; i<=9; i++){
 //			System.out.println(num+"*"+i+"="+num*i);
 //		}
-		System.out.print("for¹® 2¹ø »ç¿ëÇÏ¿© ±¸±¸´ÜÃâ·Â");
+		System.out.print("forë¬¸ 2ë²ˆ ì‚¬ìš©í•˜ì—¬ êµ¬êµ¬ë‹¨ì¶œë ¥");
 		m2.doubleFor();
 		System.out.println("--------------------");
-		System.out.println("while¹® 2¹ø »ç¿ëÇÏ¿© ±¸±¸´ÜÃâ·Â");
+		System.out.println("whileë¬¸ 2ë²ˆ ì‚¬ìš©í•˜ì—¬ êµ¬êµ¬ë‹¨ì¶œë ¥");
 		m2.doubleWhile();
-		//m2.insertnumForLoop(); //ÀÔ·Â¼ıÀÚ ±¸±¸´Ü 3È¸ ¹İº¹
-		//m2.doubleForRandom(); // 3¹øÀÇ Å« ·çÇÁ¾È¿¡¼­ ·£´ı°ª 5°³ »ı¼º½ÃÅ°°í ÇÕ ±¸ÇÏ±â
-		//m2.insertnumWhileLoop(); //ÀÔ·Â¼ıÀÚ ±¸±¸´Ü ¹«ÇÑ¹İº¹(q´­·¯¼­ Á¾·á°¡´É)
-		//m2.continueTest(); //1ºÎÅÍ 100Áß¿¡¼­ Â¦¼ö Ãâ·Â(continue ÀÌ¿ë)
+		//m2.insertnumForLoop(); //ì…ë ¥ìˆ«ì êµ¬êµ¬ë‹¨ 3íšŒ ë°˜ë³µ
+		//m2.doubleForRandom(); // 3ë²ˆì˜ í° ë£¨í”„ì•ˆì—ì„œ ëœë¤ê°’ 5ê°œ ìƒì„±ì‹œí‚¤ê³  í•© êµ¬í•˜ê¸°
+		//m2.insertnumWhileLoop(); //ì…ë ¥ìˆ«ì êµ¬êµ¬ë‹¨ ë¬´í•œë°˜ë³µ(qëˆŒëŸ¬ì„œ ì¢…ë£Œê°€ëŠ¥)
+		//m2.continueTest(); //1ë¶€í„° 100ì¤‘ì—ì„œ ì§ìˆ˜ ì¶œë ¥(continue ì´ìš©)
 		m2.continueTest2();
 	}
 
@@ -45,7 +45,7 @@ class MultiLoop2{ //1
 	public void insertnumForLoop(){
 		Scanner sc=new Scanner(System.in);
 		for(int i=1; i<4; i++){
-			System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 			int num=sc.nextInt();
 			for (int j=1; j<10; j++){
 				System.out.println(num+"*"+j+"="+num*j);
@@ -54,7 +54,7 @@ class MultiLoop2{ //1
 	}
 	public void doubleForRandom(){ //3
 		String str="";
-		int hap=0; //¼±¾ğÀº ¹İº¹¹® ¹Û¿¡¼­ ÇÏ°í ÃÊ±âÈ­¸¸ ¹İº¹¹® ¾È¿¡¼­ ÇÏ´Â °ÍÀÌ ÁÁ´Ù.(°è¼Ó ¼±¾ğµÇ¸é ¸Ş¸ğ¸® ¼º´É¿¡ ¾ÈÁÁÀº ¿µÇâÀ» ³¢Ä§)
+		int hap=0; //ì„ ì–¸ì€ ë°˜ë³µë¬¸ ë°–ì—ì„œ í•˜ê³  ì´ˆê¸°í™”ë§Œ ë°˜ë³µë¬¸ ì•ˆì—ì„œ í•˜ëŠ” ê²ƒì´ ì¢‹ë‹¤.(ê³„ì† ì„ ì–¸ë˜ë©´ ë©”ëª¨ë¦¬ ì„±ëŠ¥ì— ì•ˆì¢‹ì€ ì˜í–¥ì„ ë¼ì¹¨)
 		int rand=0;
 		for(int i=0; i<3; i++){
 			str="";
@@ -64,18 +64,18 @@ class MultiLoop2{ //1
 				str+=rand+" ";
 				hap+=rand;
 			}
-			System.out.println(i+1+"¹øÂ° ·çÇÁ ·£´ı°ª: "+str);
-			System.out.println(i+1+"¹øÂ° ·çÇÁ ·£´ı°ªÀÇ ÇÕ: "+hap);
+			System.out.println(i+1+"ë²ˆì§¸ ë£¨í”„ ëœë¤ê°’: "+str);
+			System.out.println(i+1+"ë²ˆì§¸ ë£¨í”„ ëœë¤ê°’ì˜ í•©: "+hap);
 		}
 	}
-	public void insertnumWhileLoop(){//4,¹«ÇÑ·çÇÁ while(true) ¸»°íµµ for(int i=0; ;i++)°°Àº Á¶°Ç½Ä ¾ø¾Öµµ ¹«ÇÑ·çÇÁ ±¸Çö°¡´É
+	public void insertnumWhileLoop(){//4,ë¬´í•œë£¨í”„ while(true) ë§ê³ ë„ for(int i=0; ;i++)ê°™ì€ ì¡°ê±´ì‹ ì—†ì• ë„ ë¬´í•œë£¨í”„ êµ¬í˜„ê°€ëŠ¥
 		Scanner sc=new Scanner(System.in);
 		String str="";
 		while(true){
-			System.out.print("¿øÇÏ´Â ±¸±¸´Ü ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.print("ì›í•˜ëŠ” êµ¬êµ¬ë‹¨ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 			str=sc.nextLine();
 			if(str.equals("q")){
-				System.out.println("·çÇÁ¸¦ Á¾·áÇÕ´Ï´Ù."); 
+				System.out.println("ë£¨í”„ë¥¼ ì¢…ë£Œí•©ë‹ˆë‹¤."); 
 				break;
 			}
 			else{
@@ -86,7 +86,7 @@ class MultiLoop2{ //1
 					} 
 				}
 				catch (Exception e) {
-					System.out.println("Àß¸øµÈ °ª ÀÔ·ÂÀÔ´Ï´Ù.");
+					System.out.println("ì˜ëª»ëœ ê°’ ì…ë ¥ì…ë‹ˆë‹¤.");
 				}
 				
 			}
@@ -98,13 +98,13 @@ class MultiLoop2{ //1
 		for(int i=1; i<=100; i++){
 			if (i%2==0) str1+=i+" ";
 		}
-		System.out.println("Â¦¼ö: "+str1);
+		System.out.println("ì§ìˆ˜: "+str1);
 		System.out.println("------------------------------------");
 		for(int i=1; i<=100; i++){
 			if (i%2!=0) continue;
 			str2+=i+" ";
 		}
-		System.out.println("continue Â¦¼ö´Â "+str2+"ÀÔ´Ï´Ù.");
+		System.out.println("continue ì§ìˆ˜ëŠ” "+str2+"ì…ë‹ˆë‹¤.");
 	}
 	public void continueTest2(){ //continueTest2
 		String str1="";
@@ -112,13 +112,13 @@ class MultiLoop2{ //1
 		for(int i=1; i<=100; i++){
 			if (i%3==0) str1+=i+" ";
 		}
-		System.out.println("3ÀÇ ¹è¼ö: "+str1);
+		System.out.println("3ì˜ ë°°ìˆ˜: "+str1);
 		System.out.println("------------------------------------");
 		for(int i=1; i<=100; i++){
 			if (i%3!=0) continue;
 			str2+=i+" ";
 		}
-		System.out.println("3ÀÇ ¹è¼ö´Â "+str2+"ÀÔ´Ï´Ù.");
+		System.out.println("3ì˜ ë°°ìˆ˜ëŠ” "+str2+"ì…ë‹ˆë‹¤.");
 	}
 	
 }

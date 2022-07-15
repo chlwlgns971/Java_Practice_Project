@@ -11,7 +11,7 @@ public class ResourceBundleTest {
 	public static void main(String[] args) {
 		// ResourceBundle 객체를 이용하여 파일 읽어오기
 		
-		//ResourceBundle객체 생성 -> 읽어올 파일 정보를 지정할 떄 ;패키지명, 파일명'만 지정하고 확장자는 기술하지 않는다.
+		//ResourceBundle객체 생성 -> 읽어올 파일 정보를 지정할 때 '패키지명, 파일명'만 지정하고 확장자는 기술하지 않는다.
 		//	(이유: ResourceBundle 객체는 항상 확장자 '.properties'인 파일만 처리하기 때문)
 		ResourceBundle bundle=ResourceBundle.getBundle("config.dbInfo");
 		
