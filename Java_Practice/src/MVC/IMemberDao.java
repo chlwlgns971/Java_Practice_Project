@@ -1,6 +1,7 @@
 package MVC;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 실제 DB와 연결해서 SQL문을 수행하여 결과를 작성해서 Service에 전달하는 DAO의 Interface
@@ -31,10 +32,19 @@ public interface IMemberDao {
 	public int updateMember(MemberVO memVo);
 	
 	/**
+    * Map에 저장된 정보를 이용하여 원하는 항목을 수정하는 메서드 
+    *       ==> key값 정보 : 회원ID(memid), 수정할 컬럼명(field), 수정할 데이터(data)
+    * 
+    * @param paramMap 회원ID, 수정할컬럼명, 수정할 데이터가 저장될 Map객체
+    * @return 수정성공 : 1, 수정실패 : 0
+    */
+	public int updateMember2(Map<String, String> paramMap);
+	
+	/**
 	 * 전체 회원 정보를 가져와서 List에 담아서 반환하는 메서드
 	 * @return MemberVO객체가 저장된 List객체
 	 */
-	public List<MemberVO>getAllMember();
+	public List<MemberVO> getAllMember();
 	
 	/**
 	 * 회원ID를 인수값으로 받아서 해당 회원ID의 개수를 반환하는 메서드

@@ -1,6 +1,7 @@
 package MVC;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Service객체는 DAO에 만들어진 메서드를 원하는 작업에 맞게 호출하여 실행하고 그 결과를 받아오고,
@@ -31,6 +32,15 @@ public interface IMemberService {
 	 * @return 수정성공:1, 수정실패:0
 	 */
 	public int updateMember(MemberVO memVo);
+	
+	/**
+    * Map에 저장된 정보를 이용하여 원하는 항목을 수정하는 메서드 
+    *       ==> key값 정보 : 회원ID(memid), 수정할 컬럼명(field), 수정할 데이터(data)
+    * 
+    * @param paramMap 회원ID, 수정할컬럼명, 수정할 데이터가 저장될 Map객체
+    * @return 수정성공 : 1, 수정실패 : 0
+    */
+	public int updateMember2(Map<String, String> paramMap);
 	
 	/**
 	 * 전체 회원 정보를 가져와서 List에 담아서 반환하는 메서드

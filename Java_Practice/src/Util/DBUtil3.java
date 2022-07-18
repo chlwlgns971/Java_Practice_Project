@@ -1,12 +1,8 @@
 package Util;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 import java.util.ResourceBundle;
 
 //dbInfo.properties파일의 내용을 이용하여 셋팅하는 방법
