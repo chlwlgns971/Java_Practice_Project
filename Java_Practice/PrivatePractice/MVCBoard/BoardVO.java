@@ -15,12 +15,19 @@ public class BoardVO {
 		this.board_cnt = board_cnt;
 		this.board_no = board_no;
 	}
-
-	public BoardVO(String title, String writer, String board_cnt, String content) {
+	
+	public BoardVO(String title, String writer, String content) {
 		super();
 		this.title = title;
 		this.writer = writer;
-		this.board_cnt = board_cnt;
+		this.content = content;
+	}
+	
+	public BoardVO(String title, String writer, int board_no, String content) {
+		super();
+		this.title = title;
+		this.writer = writer;
+		this.board_no = board_no;
 		this.content = content;
 	}
 	

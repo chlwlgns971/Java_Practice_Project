@@ -40,5 +40,14 @@ public class BoardServiceImpl implements BoardService {
 	public int update(BoardVO boardVo) {
 		return dao.update(boardVo);
 	}
+	@Override
+	public List<BoardVO> display() {
+		return dao.display();
+	}
+	@Override
+	public void updateCnt(int board_no) {
+		dao.updateCnt(board_no);
+	}
+	
 	
 }

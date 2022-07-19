@@ -32,14 +32,12 @@ public class BoardDaoImpl implements BoardDao {
 		try {
 			conn=DBUtil3.getConnection2();
 			String sql="insert into jdbc_board (board_no, board_title, board_writer, board_date, board_cnt, board_content) "
-					+ "values(?, ?, ?, ?, ?, ?)";
+					+ "values(board_seq.nextVal, ?, ?, sysdate, ?, ?)";
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, "board_seq.nextVal");
-			pstmt.setString(2, boardVo.getTitle());
-			pstmt.setString(3, boardVo.getWriter());
-			pstmt.setString(4, "to_char(sysdate, 'YYYY-MM-DD')");
-			pstmt.setInt(5, 0);
-			pstmt.setString(6, boardVo.getContent());
+			pstmt.setString(1, boardVo.getTitle());
+			pstmt.setString(2, boardVo.getWriter());
+			pstmt.setInt(3, 0);
+			pstmt.setString(4, boardVo.getContent());
 			
 			cnt=pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -57,7 +55,7 @@ public class BoardDaoImpl implements BoardDao {
 		int cnt=0;
 		try {
 			conn=DBUtil3.getConnection2();
-			String sql="delete from jdbc_board where moard_no = ?";
+			String sql="delete from jdbc_board where board_no = ?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, board_no);
 			
@@ -84,9 +82,10 @@ public class BoardDaoImpl implements BoardDao {
 				String writer=rs.getString("board_writer");
 				String cnt=rs.getString("board_cnt");
 				String date=rs.getString("board_date");
-				String content=rs.getString("board+content");
+				String content=rs.getString("board_content");
 				list.add(new BoardVO(title, writer, cnt, content, date, no));
 			}
+			updateCnt(board_no);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -132,15 +131,14 @@ public class BoardDaoImpl implements BoardDao {
 			conn = DBUtil3.getConnection2();
 		     
 			String sql = " update jdbc_board set "
-					+" board_title =?, board_writer = ?, board_date =?, board_content =? "
+					+" board_title =?, board_writer = ?, board_date = sysdate, board_content =? "
 					+" where board_no =? ";
 		         
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, boardVo.getTitle());
 			pstmt.setString(2, boardVo.getWriter());
-			pstmt.setString(3, "to_char(sysdate, 'YYYY-MM-DD')");
-			pstmt.setString(4, boardVo.getContent());
-			pstmt.setInt(5, boardVo.getBoard_no());  
+			pstmt.setString(3, boardVo.getContent());
+			pstmt.setInt(4, boardVo.getBoard_no());  
 			cnt=pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -149,6 +147,47 @@ public class BoardDaoImpl implements BoardDao {
 			if(conn!=null) try {conn.close();} catch(SQLException e) {};
 		}
 		return cnt;
+	}
+	@Override
+	public List<BoardVO> display() {
+		List<BoardVO> list=new ArrayList<BoardVO>();
+		try {
+			conn=DBUtil.getConnection2();
+			String sql="select board_no, board_title, board_writer, board_cnt from jdbc_board";
+			stmt=conn.createStatement();
+			rs=stmt.executeQuery(sql);
+			while(rs.next()) {
+				int no=rs.getInt("board_no");
+				String title=rs.getString("board_title");
+				String writer=rs.getString("board_writer");
+				String cnt=rs.getString("board_cnt");
+				list.add(new BoardVO(title, writer, cnt, no)); 
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null) try {conn.close();} catch(SQLException e) {};
+			if(pstmt!=null) try {pstmt.close();} catch(SQLException e) {};
+			if(conn!=null) try {conn.close();} catch(SQLException e) {};
+		}
+		return list;
+	}
+	@Override
+	public void updateCnt(int board_no) {
+		int cnt=0;
+		try {
+			conn=DBUtil3.getConnection2();
+			String sql="UPDATE jdbc_board SET board_cnt = board_cnt+1 WHERE board_no = ?";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, board_no);
+			cnt=pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(pstmt!=null) try {pstmt.close();} catch(SQLException e) {};
+			if(conn!=null) try {conn.close();} catch(SQLException e) {};
+		}
 	}
 
 }

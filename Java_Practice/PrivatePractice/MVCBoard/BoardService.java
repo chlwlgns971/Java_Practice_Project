@@ -37,4 +37,16 @@ public interface BoardService {
 	 * @return update 성공: 1 실패: 0
 	 */
 	public int update(BoardVO boardVo);
+	
+	/**
+	 * 홈에 게시판 띄우기용 메서드
+	 * @return 게시글 정보가 담긴 List
+	 */
+	public List<BoardVO> display();
+	
+	/**
+	 * 조회수+1 시키는 메서드
+	 * @param board_no
+	 */
+	public void updateCnt(int board_no);
 }
