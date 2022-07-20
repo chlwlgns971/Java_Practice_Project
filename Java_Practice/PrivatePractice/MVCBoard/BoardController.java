@@ -110,17 +110,17 @@ public class BoardController {
 		 System.out.println("메뉴 : 1. 수정     2. 삭제    3. 홈으로 돌아가기");
 		 System.out.print("작업선택>>> ");
 		 switch (sc.nextInt()) {
-		case 1:
-			updatePost(num);
-			break;
-		case 2:
-			deletePost(num);
-			break;
-		case 3:
-			return;
-		default:
-			System.out.println("잘못된 입력입니다. 홈으로 돌아갑니다.");
-			break;
+			case 1:
+				updatePost(num);
+				break;
+			case 2:
+				deletePost(num);
+				break;
+			case 3:
+				return;
+			default:
+				System.out.println("잘못된 입력입니다. 홈으로 돌아갑니다.");
+				break;
 		}
 	}
 	private void updatePost(int board_no) {
@@ -174,9 +174,9 @@ public class BoardController {
 	        	 break;
 	         case 4 :
 	            return;
-		 default:
-			 System.out.println("잘못된 입력입니다. 홈으로 돌아갑니다.");
-			 break;
+			 default:
+				 System.out.println("잘못된 입력입니다. 홈으로 돌아갑니다.");
+				 break;
 		}
 		
 	}
