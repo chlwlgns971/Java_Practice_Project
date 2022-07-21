@@ -12,7 +12,7 @@ public class MemberServiceImpl implements IMemberService {
 	// 생성자 and Singleton 2번  
 	private MemberServiceImpl() {
 		//dao = new MemberDaoImpl(); // DAO 객체 생성
-		dao=MemberDaoImpl.getInstance(); //DAO 객체 생성
+		dao=MemberDaoIBatis.getInstance(); //DAO 객체 생성
 	}
 	//3번
 	public static MemberServiceImpl getInstance() {
