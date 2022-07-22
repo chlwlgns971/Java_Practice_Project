@@ -60,8 +60,8 @@ public class BoardController {
 		 else {
 			 for(BoardVO vo : postList) {
 				 int no=vo.getBoard_no();
-				 String title=vo.getTitle();
-				 String writer=vo.getWriter();
+				 String title=vo.getBoard_title();
+				 String writer=vo.getBoard_writer();
 				 String cnt=vo.getBoard_cnt();
 				 System.out.println(no  + "\t"+title  + "\t\t\t"+writer  + "\t"+cnt);      
 			 }
@@ -90,6 +90,7 @@ public class BoardController {
 		System.out.print("게시글 번호를 입력해주세요>>");
 		int num=sc.nextInt();
 		post=service.showPost(num);
+		System.out.println(post);
 		
 		if(post==null || post.size()==0) {
 			 System.out.println("등록된 게시글이 존재하지 않습니다.");
@@ -100,10 +101,10 @@ public class BoardController {
 		System.out.println(num+"번글 내용");
 		System.out.println("-----------------------------------------------------");
 		for(BoardVO vo : post) {
-			System.out.println("-제 목: "+vo.getTitle()); 
-			System.out.println("-작성자: "+vo.getWriter()); 
-			System.out.println("-내 용: "+vo.getContent()); 
-			System.out.println("-작성일: "+vo.getDate()); 
+			System.out.println("-제 목: "+vo.getBoard_title()); 
+			System.out.println("-작성자: "+vo.getBoard_writer()); 
+			System.out.println("-내 용: "+vo.getBoard_content()); 
+			System.out.println("-작성일: "+vo.getBoard_date()); 
 			System.out.println("-조회수: "+(Integer.parseInt(vo.getBoard_cnt())+1)); 
 		 }
 		 System.out.println("-----------------------------------------------------");
@@ -154,8 +155,8 @@ public class BoardController {
 		System.out.println("-----------------------------------------------------");
 		for(BoardVO vo : postList) {
 			 int no=vo.getBoard_no();
-			 String title=vo.getTitle();
-			 String writer=vo.getWriter();
+			 String title=vo.getBoard_title();
+			 String writer=vo.getBoard_writer();
 			 String cnt=vo.getBoard_cnt();
 			 System.out.println(no  + "\t"+title  + "\t\t"+writer  + "\t"+cnt);      
 		 }

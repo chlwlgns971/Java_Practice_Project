@@ -1,60 +1,64 @@
 package MVCBoard;
 
 public class BoardVO {
-	private String title;
-	private String writer;
+	private String board_title;
+	private String board_writer;
 	private String board_cnt;
-	private String content;
-	private String date;
+	private String board_content;
+	private String board_date;
 	private int board_no;
 	
+	public BoardVO() {
+		super();
+	}
+
 	public BoardVO(String title, String writer, String board_cnt, int board_no) {
 		super();
-		this.title = title;
-		this.writer = writer;
+		this.board_title = title;
+		this.board_writer = writer;
 		this.board_cnt = board_cnt;
 		this.board_no = board_no;
 	}
 	
 	public BoardVO(String title, String writer, String content) {
 		super();
-		this.title = title;
-		this.writer = writer;
-		this.content = content;
+		this.board_title = title;
+		this.board_writer = writer;
+		this.board_content = content;
 	}
 	
 	public BoardVO(String title, String writer, int board_no, String content) {
 		super();
-		this.title = title;
-		this.writer = writer;
+		this.board_title = title;
+		this.board_writer = writer;
 		this.board_no = board_no;
-		this.content = content;
+		this.board_content = content;
 	}
 	
 	public BoardVO(String title, String writer, String board_cnt, String content, String date, int board_no) {
 		super();
-		this.title = title;
-		this.writer = writer;
+		this.board_title = title;
+		this.board_writer = writer;
 		this.board_cnt = board_cnt;
-		this.content = content;
-		this.date = date;
+		this.board_content = content;
+		this.board_date = date;
 		this.board_no = board_no;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getBoard_title() {
+		return board_title;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setBoard_title(String board_title) {
+		this.board_title = board_title;
 	}
 
-	public String getWriter() {
-		return writer;
+	public String getBoard_writer() {
+		return board_writer;
 	}
 
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setBoard_writer(String board_writer) {
+		this.board_writer = board_writer;
 	}
 
 	public String getBoard_cnt() {
@@ -65,14 +69,22 @@ public class BoardVO {
 		this.board_cnt = board_cnt;
 	}
 
-	public String getContent() {
-		return content;
+	public String getBoard_content() {
+		return board_content;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setBoard_content(String board_content) {
+		this.board_content = board_content;
 	}
-	
+
+	public String getBoard_date() {
+		return board_date;
+	}
+
+	public void setBoard_date(String board_date) {
+		this.board_date = board_date;
+	}
+
 	public int getBoard_no() {
 		return board_no;
 	}
@@ -80,18 +92,12 @@ public class BoardVO {
 	public void setBoard_no(int board_no) {
 		this.board_no = board_no;
 	}
-	
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
 
 	@Override
 	public String toString() {
-		return "BoardVO [title=" + title + ", writer=" + writer + ", board_cnt=" + board_cnt + ", content=" + content
-				+ "]";
+		return "BoardVO [board_title=" + board_title + ", board_writer=" + board_writer + ", board_cnt=" + board_cnt
+				+ ", board_content=" + board_content + ", board_date=" + board_date + ", board_no=" + board_no + "]";
 	}
+
+	
 }

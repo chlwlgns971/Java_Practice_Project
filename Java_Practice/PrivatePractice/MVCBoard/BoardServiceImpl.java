@@ -5,11 +5,11 @@ import java.util.List;
 import MVC.IMemberDao;
 
 public class BoardServiceImpl implements BoardService {
-	private BoardDaoImpl dao; // DAO 객체가 저장될 변수 선언
+	private BoardDaoIBatis dao; // DAO 객체가 저장될 변수 선언
 	
 	private static BoardServiceImpl service;
 	private BoardServiceImpl() {
-		dao=BoardDaoImpl.getInstance();
+		dao=BoardDaoIBatis.getInstance();
 	}
 	public static BoardServiceImpl getInstance() {
 		if(service==null) service=new BoardServiceImpl();

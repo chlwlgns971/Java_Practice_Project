@@ -34,10 +34,10 @@ public class BoardDaoImpl implements BoardDao {
 			String sql="insert into jdbc_board (board_no, board_title, board_writer, board_date, board_cnt, board_content) "
 					+ "values(board_seq.nextVal, ?, ?, sysdate, ?, ?)";
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, boardVo.getTitle());
-			pstmt.setString(2, boardVo.getWriter());
+			pstmt.setString(1, boardVo.getBoard_title());
+			pstmt.setString(2, boardVo.getBoard_writer());
 			pstmt.setInt(3, 0);
-			pstmt.setString(4, boardVo.getContent());
+			pstmt.setString(4, boardVo.getBoard_content());
 			
 			cnt=pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -135,9 +135,9 @@ public class BoardDaoImpl implements BoardDao {
 					+" where board_no =? ";
 		         
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, boardVo.getTitle());
-			pstmt.setString(2, boardVo.getWriter());
-			pstmt.setString(3, boardVo.getContent());
+			pstmt.setString(1, boardVo.getBoard_title());
+			pstmt.setString(2, boardVo.getBoard_writer());
+			pstmt.setString(3, boardVo.getBoard_content());
 			pstmt.setInt(4, boardVo.getBoard_no());  
 			cnt=pstmt.executeUpdate();
 		} catch (SQLException e) {
