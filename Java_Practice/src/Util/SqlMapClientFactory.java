@@ -25,7 +25,7 @@ public class SqlMapClientFactory {
 	   } catch (IOException e) {
 		   e.printStackTrace();
 	   }finally {
-		   if(rd!=null) try { rd.close();    } catch ( IOException e) {}
+		   if(rd!=null) try { rd.close(); } catch ( IOException e) {}
 	   }
       
    	}
