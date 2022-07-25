@@ -58,7 +58,7 @@
       	select count(*) cnt from lprod where lprod_gu = #lprod_gu#
    	</select>
    
-   	<insert id="insertLprod" parameterClass="lprodVo">   
+   	<insert id="insertLprod2" parameterClass="lprodVo">   
         insert into lprod (lprod_id, lprod_gu, lprod_nm)
         values (#lprod_id#, #lprod_gu#, #lprod_nm#)
     </insert>
