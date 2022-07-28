@@ -104,8 +104,7 @@ public class MemberDaoImpl implements IMemberDao {
 		pstmt=null;
 		int cnt=0;
 		try {
-			conn=DBUtil3.getConnection2();
-			
+			conn=DBUtil3.getConnection2();			
 			//paramMap에 저장된 key값을 이용하여 쿼리문을 작성하고, 쿼리문에 들어갈 데이터를 셋팅하는 작업을 진행한다.
 			String sql = "update mymember set "+paramMap.get("field")+" = ? where mem_id = ?";
 			pstmt=conn.prepareStatement(sql);
